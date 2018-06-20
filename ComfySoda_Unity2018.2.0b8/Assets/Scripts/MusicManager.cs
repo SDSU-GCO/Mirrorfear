@@ -1,0 +1,108 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum MusicState { main, mob, boss, off };
+
+public class MusicManager : MonoBehaviour {
+    public static MusicManager musicManager;
+    public MusicState musicState = MusicState.main;
+    public float fadeSpeed = .02f;
+	public AudioSource mainMusic;
+	public AudioSource mob;
+	public AudioSource boss;
+	private bool error = false;
+    private MusicState prevState;
+	// Use this for initialization
+	void Start () {
+        musicManager = this;
+		if (!mainMusic || !mob || !boss)
+		{
+			Debug.LogWarning("One or more audio source has not been initialized. Please double check that.");
+			error = true;
+		}
+		else 
+		{
+            //set the music variable's initial states
+            prevState = MusicState.main;
+            mainMusic.volume = mob.volume = boss.volume =1;
+            mainMusic.loop = mob.loop = boss.loop = true;
+            //start music
+            mainMusic.Play();
+            mob.Play();
+            boss.Play();
+		}
+	}
+
+    private void OnEnable()
+    {
+        if (musicManager != null)
+            Debug.LogWarning("There should only be ONE Music Manager active in a scene!");
+        else
+            musicManager = this;
+    }
+
+    private void OnDisable()
+    {
+        if (musicManager != null && musicManager == this)
+            musicManager = null;
+        else
+        {
+            Debug.LogWarning("There should only be ONE Music Manager active in a scene!");
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+		if (!error && musicState != prevState)
+        {
+            StopCoroutine("ChangeMusic");
+            StartCoroutine("ChangeMusic");
+            prevState = musicState;
+        }
+	}
+
+    IEnumerator ChangeMusic()
+    {
+        if (musicState == MusicState.off)
+        {
+            while (mainMusic.volume > 1 || mob.volume > 1 || boss.volume > 1)
+            {
+                mainMusic.volume = Mathf.Max(0.0f, mainMusic.volume - fadeSpeed);
+                boss.volume = Mathf.Max(0.0f, boss.volume - fadeSpeed);
+                mob.volume = Mathf.Max(0.0f, mob.volume - fadeSpeed);
+                yield return null;
+            }
+        }
+        else if (musicState == MusicState.main)
+        {
+            while (mainMusic.volume < 1 || mob.volume > 0 || boss.volume > 0)
+            {
+                mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + fadeSpeed);
+                boss.volume = Mathf.Min(1.0f, boss.volume - fadeSpeed);
+                mob.volume = Mathf.Min(1.0f, mob.volume - fadeSpeed);
+                yield return null;
+            }
+        }
+        else if (musicState == MusicState.mob)
+        {
+            while (mob.volume < 1 || boss.volume > 0)
+            {
+                mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + fadeSpeed);
+                boss.volume = Mathf.Min(1.0f, boss.volume - fadeSpeed);
+                mob.volume = Mathf.Min(1.0f, mob.volume + fadeSpeed);
+                yield return null;
+            }
+        }
+        else if (musicState == MusicState.boss)
+        {
+            while (mainMusic.volume < 1 || mob.volume < 1 || boss.volume < 1)
+            {
+                mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + fadeSpeed);
+                boss.volume = Mathf.Min(1.0f, boss.volume + fadeSpeed);
+                mob.volume = Mathf.Min(1.0f, mob.volume + fadeSpeed);
+                yield return null;
+            }
+        }
+    }
+}
