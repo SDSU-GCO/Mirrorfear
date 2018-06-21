@@ -39,6 +39,10 @@ namespace cs
                     MusicManager.musicState = MusicState.main;
                 }
             }
+            else if (MusicManager.musicState != MusicState.off)
+            {
+                MusicManager.musicState = MusicState.main;
+            }
         }
 
         public static void GameOverCheck(Collision2D enemy)

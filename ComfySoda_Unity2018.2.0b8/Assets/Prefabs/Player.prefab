@@ -37,8 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4280729670352882}
   - component: {fileID: 82349012871611266}
-  - component: {fileID: 82378843164946850}
   - component: {fileID: 82446571774386590}
+  - component: {fileID: 82366508399690370}
   - component: {fileID: 114990656095796420}
   m_Layer: 0
   m_Name: AudioManager
@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 50745660706579750}
   - component: {fileID: 114757836964492208}
   - component: {fileID: 95771282538741116}
-  - component: {fileID: 114299587804634474}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -286,7 +285,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82378843164946850
+--- !u!82 &82366508399690370
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,7 +295,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0bb9b45c4d7b7784b99eeafb16acf0ec, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -350,7 +349,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -365,7 +364,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -380,7 +379,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
 --- !u!82 &82446571774386590
 AudioSource:
   m_ObjectHideFlags: 1
@@ -494,17 +493,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114299587804634474
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1978029246144076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09ce171f40032ad46a5c1f572d603a82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114757836964492208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,7 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2212b061247396f47bfdab827b7067e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disablePlayer: 0
   speed: 2.1
 --- !u!114 &114990656095796420
 MonoBehaviour:
@@ -529,10 +516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d127c7ba433961428d2d62cb08c0d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicState: 0
-  fadeSpeed: 0.005
+  fadeSpeed: 0.4
   mainMusic: {fileID: 82349012871611266}
-  mob: {fileID: 82378843164946850}
+  mob: {fileID: 82366508399690370}
   boss: {fileID: 82446571774386590}
 --- !u!212 &212148349697392672
 SpriteRenderer:

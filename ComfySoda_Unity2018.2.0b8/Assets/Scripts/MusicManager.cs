@@ -31,7 +31,8 @@ namespace cs
             {
                 //set the music variable's initial states
                 prevState = MusicState.main;
-                mainMusic.volume = mob.volume = boss.volume = 1;
+                mainMusic.volume = 1;
+                mob.volume = boss.volume = 0;
                 mainMusic.loop = mob.loop = boss.loop = true;
                 //start music
                 mainMusic.Play();
@@ -61,9 +62,9 @@ namespace cs
             {
                 while (mainMusic.volume > 1 || mob.volume > 1 || boss.volume > 1)
                 {
-                    mainMusic.volume = Mathf.Max(0.0f, mainMusic.volume - fadeSpeed);
-                    boss.volume = Mathf.Max(0.0f, boss.volume - fadeSpeed);
-                    mob.volume = Mathf.Max(0.0f, mob.volume - fadeSpeed);
+                    mainMusic.volume = Mathf.Max(0.0f, mainMusic.volume - (fadeSpeed*Time.deltaTime));
+                    boss.volume = Mathf.Max(0.0f, boss.volume - (fadeSpeed * Time.deltaTime));
+                    mob.volume = Mathf.Max(0.0f, mob.volume - (fadeSpeed * Time.deltaTime));
                     yield return null;
                 }
             }
@@ -71,9 +72,9 @@ namespace cs
             {
                 while (mainMusic.volume < 1 || mob.volume > 0 || boss.volume > 0)
                 {
-                    mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + fadeSpeed);
-                    boss.volume = Mathf.Min(1.0f, boss.volume - fadeSpeed);
-                    mob.volume = Mathf.Min(1.0f, mob.volume - fadeSpeed);
+                    mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + (fadeSpeed * Time.deltaTime));
+                    boss.volume = Mathf.Min(1.0f, boss.volume - (fadeSpeed * Time.deltaTime));
+                    mob.volume = Mathf.Min(1.0f, mob.volume - (fadeSpeed * Time.deltaTime));
                     yield return null;
                 }
             }
@@ -81,9 +82,9 @@ namespace cs
             {
                 while (mob.volume < 1 || boss.volume > 0)
                 {
-                    mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + fadeSpeed);
-                    boss.volume = Mathf.Min(1.0f, boss.volume - fadeSpeed);
-                    mob.volume = Mathf.Min(1.0f, mob.volume + fadeSpeed);
+                    mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + (fadeSpeed * Time.deltaTime));
+                    boss.volume = Mathf.Min(1.0f, boss.volume - (fadeSpeed * Time.deltaTime));
+                    mob.volume = Mathf.Min(1.0f, mob.volume + (fadeSpeed * Time.deltaTime));
                     yield return null;
                 }
             }
@@ -91,9 +92,9 @@ namespace cs
             {
                 while (mainMusic.volume < 1 || mob.volume < 1 || boss.volume < 1)
                 {
-                    mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + fadeSpeed);
-                    boss.volume = Mathf.Min(1.0f, boss.volume + fadeSpeed);
-                    mob.volume = Mathf.Min(1.0f, mob.volume + fadeSpeed);
+                    mainMusic.volume = Mathf.Min(1.0f, mainMusic.volume + (fadeSpeed * Time.deltaTime));
+                    boss.volume = Mathf.Min(1.0f, boss.volume + (fadeSpeed * Time.deltaTime));
+                    mob.volume = Mathf.Min(1.0f, mob.volume + (fadeSpeed * Time.deltaTime));
                     yield return null;
                 }
             }

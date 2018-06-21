@@ -35,11 +35,7 @@ namespace cs
             {
                 enemyLogicsInBossRange = new List<EnemyLogic>();
             }
-
-            if (enemyLogicsInMobRange == null)
-            {
-                enemyLogicsInMobRange = new List<EnemyLogic>();
-            }
+            
         }
 
         // Use this for initialization
@@ -47,7 +43,7 @@ namespace cs
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             enemyDefaultMotivation = enemysCurrentMotivation;
-            myRigidbody2D = GetComponent<Rigidbody2D>(); 
+            myRigidbody2D = GetComponent<Rigidbody2D>();
             tempAnimator = GetComponent<Animator>();
             if (enemyLogicsInBossRange == null)
             {
@@ -75,7 +71,9 @@ namespace cs
         // Update is called once per frame
         void Update()
         {
-            if(checkLineOfSightToPlayer())
+            bool enemyHasLineOfSightOnPlayer = checkLineOfSightToPlayer();
+
+            if (enemyHasLineOfSightOnPlayer)
             {
                 enemysCurrentMotivation = enemyDefaultMotivation;
             }
@@ -87,27 +85,37 @@ namespace cs
 
             if (!disableEnimies)
             {
-                if (Vector2.Distance(myRigidbody2D.position, PlayerLogic.playerObject.GetComponent<Rigidbody2D>().position) < 3)
+                if (enemyHasLineOfSightOnPlayer)
                 {
-
                     if (!enemyLogicsInBossRange.Contains(this))
                     {
                         enemyLogicsInBossRange.Add(this);
                     }
-                    if (enemyLogicsInMobRange.Contains(this))
-                    {
-                        enemyLogicsInMobRange.Remove(this);
-                    }
-                }
-                else if (Vector2.Distance(myRigidbody2D.position, PlayerLogic.playerObject.GetComponent<Rigidbody2D>().position) < 6)
-                {
                     if (!enemyLogicsInMobRange.Contains(this))
                     {
                         enemyLogicsInMobRange.Add(this);
                     }
+                }
+                else if(Vector2.Distance(new Vector2(PlayerLogic.playerObject.transform.position.x, PlayerLogic.playerObject.transform.position.y), new Vector2(transform.position.x, transform.position.y-0.5f))<3.0f)
+                {
                     if (enemyLogicsInBossRange.Contains(this))
                     {
                         enemyLogicsInBossRange.Remove(this);
+                    }
+                    if (!enemyLogicsInMobRange.Contains(this))
+                    {
+                        enemyLogicsInMobRange.Add(this);
+                    }
+                }
+                else
+                {
+                    if (enemyLogicsInBossRange.Contains(this))
+                    {
+                        enemyLogicsInBossRange.Remove(this);
+                    }
+                    if (enemyLogicsInMobRange.Contains(this))
+                    {
+                        enemyLogicsInMobRange.Remove(this);
                     }
                 }
             }
@@ -199,7 +207,7 @@ namespace cs
                 switch (currentEnemyState)
                 {
                     case EnemyState.GO_TO_NEAREST_WAYPOINT:
-                        if (checkLineOfSightToPlayer())
+                        if (enemyHasLineOfSightOnPlayer)
                         {
                             currentEnemyState = EnemyState.BEE_LINE_FOR_PLAYER;
                         }
@@ -216,13 +224,13 @@ namespace cs
                         tempAnimator.SetFloat("Horizontal Axis", directionOfNearestTargetWaypoint.normalized.x);
                         tempAnimator.SetFloat("Vertical Axis", directionOfNearestTargetWaypoint.normalized.y);
 
-                        if (!checkLineOfSightToPlayer() && myRigidbody2D.velocity.magnitude <= 0.2)
+                        if (!enemyHasLineOfSightOnPlayer && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
 
                         break;
                     case EnemyState.BEE_LINE_FOR_PLAYER:
                         Vector2 directionOfPlayer = new Vector2(PlayerLogic.playerObject.transform.position.x, PlayerLogic.playerObject.transform.position.y -0.5f) - new Vector2(transform.position.x, transform.position.y-0.5f);
-                        if (!checkLineOfSightToPlayer() && myRigidbody2D.velocity.magnitude <= 0.2)
+                        if (!enemyHasLineOfSightOnPlayer && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
                         myRigidbody2D.velocity = directionOfPlayer.normalized * enemySpeed;
                         tempAnimator.SetFloat("Horizontal Axis", directionOfPlayer.normalized.x);
@@ -247,7 +255,7 @@ namespace cs
                         }
                         break;
                     case EnemyState.FOLLOW_WAYPOINTS:
-                        if (!checkLineOfSightToPlayer() && myRigidbody2D.velocity.magnitude <= 0.2)
+                        if (!enemyHasLineOfSightOnPlayer && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
 
                         Vector2 directionOfPathTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
@@ -263,7 +271,7 @@ namespace cs
                         {
                             nextTargetedWaypoint = pathOfWaypoints[pathOfWaypoints.Count - 1];
                         }
-                        else if(checkLineOfSightToPlayer())
+                        else if(enemyHasLineOfSightOnPlayer)
                         {
                             currentEnemyState = EnemyState.BEE_LINE_FOR_PLAYER;
                         }
