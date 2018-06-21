@@ -9,17 +9,44 @@ namespace cs
     {
         public Image GameOverScreen = null;
         public float fadeSpeed = 0.05f;
-        public MusicManager musicManager = null;
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        delegate void Function();
+        static Function function;
+
+        void OnEnable()
         {
-            if (collision.gameObject == PersistentData.playerObject)
+            if(function != null)
             {
-                musicManager.musicState = MusicState.main;
-                EnemyLogic.disableEnimies = true;
-                PersistentData.playerObject.GetComponent<PlayerMovement>().disablePlayer = true;
-                StartCoroutine(GameOverDisplay());
+                Debug.LogWarning("There should only be one \"GameOverController\" per scene!");
             }
+            function = StartDisplayingGameOver;
+        }
+
+        void OnDisable()
+        {
+            if(function != StartDisplayingGameOver)
+            {
+                Debug.LogWarning("There should only be one \"GameOverController\" per scene!");
+            }
+            else
+            {
+                function = null;
+            }
+        }
+
+        public static void StartGameOver()
+        {
+            function();
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            SceneLocalStaticsManager.GameOverCheck(collision);
+        }
+
+        void StartDisplayingGameOver()
+        {
+            StartCoroutine(GameOverDisplay());
         }
 
         IEnumerator GameOverDisplay()

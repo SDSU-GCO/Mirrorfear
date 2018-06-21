@@ -7,27 +7,56 @@ namespace cs
 
     public class EnemyLogic : MonoBehaviour
     {
+        public static List<EnemyLogic> enemyLogicsInBossRange;
+        public static List<EnemyLogic> enemyLogicsInMobRange;
         public static bool disableEnimies = false;
-        public MusicManager musicManager = MusicManager.musicManager;
-        public enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PLAYER, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS};
-        public static List<WaypointBehavior> waypoints = WaypointBehavior.waypoints;
-        public EnemyState currentEnemyState = EnemyState.FADE_IN;
-        Rigidbody2D myRigidbode2D;
-        public GameObject displayObjectsInInspector = null;
-        public float fadeSpeed = 1;
+        SpriteRenderer spriteRenderer;
+        public float fadeSpeed = 0.01f;
         public float initialOpacity = 0.5f;
-        public float enemySpeed = 5;
-        public float enemyDemotivationRate = 2.0f;
-        float enemyMotivation = 10.0f;
+        public float enemySpeed = 4;
+        public float enemyDemotivationRate = 10.0f;
+        public float enemysCurrentMotivation = 100.0f;
+        private float enemyDefaultMotivation;
+        public GameObject raycastTarget = null;
+        public enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PLAYER, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS };
+        public EnemyState currentEnemyState = EnemyState.FADE_IN;
+        public EnemyState previousEnemyState = EnemyState.FADE_IN;
         public WaypointBehavior lastTriggeredWaypoint = null;
         public WaypointBehavior nextTargetedWaypoint = null;
+        List<WaypointBehavior> waypoints = WaypointBehavior.waypoints;
+        Rigidbody2D myRigidbody2D;
         Animator tempAnimator;
+
+       
+
+        private void OnEnable()
+        {
+            if(enemyLogicsInBossRange==null)
+            {
+                enemyLogicsInBossRange = new List<EnemyLogic>();
+            }
+
+            if (enemyLogicsInMobRange == null)
+            {
+                enemyLogicsInMobRange = new List<EnemyLogic>();
+            }
+        }
 
         // Use this for initialization
         void Start()
         {
-            myRigidbode2D = GetComponent<Rigidbody2D>(); 
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            enemyDefaultMotivation = enemysCurrentMotivation;
+            myRigidbody2D = GetComponent<Rigidbody2D>(); 
             tempAnimator = GetComponent<Animator>();
+            if (enemyLogicsInBossRange == null)
+            {
+                enemyLogicsInBossRange = new List<EnemyLogic>();
+            }
+            if (enemyLogicsInMobRange == null)
+            {
+                enemyLogicsInMobRange = new List<EnemyLogic>();
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -36,34 +65,59 @@ namespace cs
             if(tempWaypoint!=null)
             {
                 lastTriggeredWaypoint = tempWaypoint;
+                if(currentEnemyState==EnemyState.FOLLOW_WAYPOINTS)
+                {
+                    enemysCurrentMotivation = enemyDefaultMotivation;
+                }
             }
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(!disableEnimies)
+            if(checkLineOfSightToPlayer())
             {
-                if (Vector2.Distance(myRigidbode2D.position, PersistentData.playerObject.GetComponent<Rigidbody2D>().position) < 3)
+                enemysCurrentMotivation = enemyDefaultMotivation;
+            }
+
+            if (currentEnemyState != previousEnemyState)
+            {
+                previousEnemyState = currentEnemyState;
+            }
+
+            if (!disableEnimies)
+            {
+                if (Vector2.Distance(myRigidbody2D.position, PlayerLogic.playerObject.GetComponent<Rigidbody2D>().position) < 3)
                 {
-                    musicManager.musicState = MusicState.boss;
+
+                    if (!enemyLogicsInBossRange.Contains(this))
+                    {
+                        enemyLogicsInBossRange.Add(this);
+                    }
+                    if (enemyLogicsInMobRange.Contains(this))
+                    {
+                        enemyLogicsInMobRange.Remove(this);
+                    }
                 }
-                else if (Vector2.Distance(myRigidbode2D.position, PersistentData.playerObject.GetComponent<Rigidbody2D>().position) < 6)
+                else if (Vector2.Distance(myRigidbody2D.position, PlayerLogic.playerObject.GetComponent<Rigidbody2D>().position) < 6)
                 {
-                    musicManager.musicState = MusicState.mob;
-                }
-                else
-                {
-                    musicManager.musicState = MusicState.main;
+                    if (!enemyLogicsInMobRange.Contains(this))
+                    {
+                        enemyLogicsInMobRange.Add(this);
+                    }
+                    if (enemyLogicsInBossRange.Contains(this))
+                    {
+                        enemyLogicsInBossRange.Remove(this);
+                    }
                 }
             }
 
 
-            if (DialogueManager.dialogueManager.animator.GetBool("IsOpen") || disableEnimies)
+            if (disableEnimies)
             {
-                myRigidbode2D.velocity = new Vector2(0, 0);
+                myRigidbody2D.velocity = new Vector2(0, 0);
             }
-            if (!DialogueManager.dialogueManager.animator.GetBool("IsOpen") && !disableEnimies)
+            else
             {
 
                 List<WaypointBehavior> pathOfWaypoints = null;
@@ -74,7 +128,7 @@ namespace cs
 
                     List<WaypointBehavior> unvisitedSet = new List<WaypointBehavior>();
 
-                    GameObject playerObject = PersistentData.playerObject;
+                    GameObject playerObject = PlayerLogic.playerObject;
                     float? shortestDistanceToPlayer = null;
                     WaypointBehavior currentNode = null;
                     WaypointBehavior targetNode = null;
@@ -94,11 +148,19 @@ namespace cs
                             targetNode = waypointBehavior;
                         }
 
-                        distance = Vector3.Distance(transform.position, waypoint.transform.position);
-                        if (shortestDistanceToWaypoint == null || shortestDistanceToWaypoint > distance)
+
+                        if(lastTriggeredWaypoint!=null && currentEnemyState!=EnemyState.GO_TO_NEAREST_WAYPOINT)
                         {
-                            shortestDistanceToWaypoint = distance;
-                            startNode = waypointBehavior;
+                            startNode = lastTriggeredWaypoint;
+                        }
+                        else
+                        {
+                            distance = Vector3.Distance(transform.position, waypoint.transform.position);
+                            if (shortestDistanceToWaypoint == null || shortestDistanceToWaypoint > distance)
+                            {
+                                shortestDistanceToWaypoint = distance;
+                                startNode = waypointBehavior;
+                            }
                         }
                     }
 
@@ -113,61 +175,86 @@ namespace cs
                         pathOfWaypoints = tracePath(startNode, currentNode);
                 }
 
-                switch (currentEnemyState)
+                if (enemysCurrentMotivation <= 0)
                 {
-                    case EnemyState.GO_TO_NEAREST_WAYPOINT:
-                        if (nextTargetedWaypoint != null)
+                    nextTargetedWaypoint = startNode;
+                    currentEnemyState = EnemyState.GO_TO_NEAREST_WAYPOINT;
+
+                    if (enemysCurrentMotivation <= -150)
+                    {
+                        enemysCurrentMotivation = enemyDefaultMotivation;
+                        currentEnemyState = EnemyState.PHASE_TO_WAYPOINT;
+                        if (lastTriggeredWaypoint != null)
                         {
-                            Vector2 directionOfNearestTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
-                            myRigidbode2D.velocity = directionOfNearestTargetWaypoint.normalized * enemySpeed;
-                            tempAnimator.SetFloat("Horizontal Axis", directionOfNearestTargetWaypoint.normalized.x);
-                            tempAnimator.SetFloat("Vertical Axis", directionOfNearestTargetWaypoint.normalized.y);
+                            nextTargetedWaypoint = lastTriggeredWaypoint;
+                            lastTriggeredWaypoint = null;
                         }
                         else
                         {
+                            nextTargetedWaypoint = startNode;
+                        }
+                        GetComponent<Collider2D>().enabled = false;
+                    }
+                }
+                switch (currentEnemyState)
+                {
+                    case EnemyState.GO_TO_NEAREST_WAYPOINT:
+                        if (checkLineOfSightToPlayer())
+                        {
                             currentEnemyState = EnemyState.BEE_LINE_FOR_PLAYER;
                         }
-                        if (lastTriggeredWaypoint != null)
+                        nextTargetedWaypoint = startNode;
+
+                        if (Vector2.Distance( new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y), new Vector2(transform.position.x, transform.position.y-0.5f)) < 0.1f)
                         {
                             currentEnemyState = EnemyState.FOLLOW_WAYPOINTS;
+                            enemysCurrentMotivation = enemyDefaultMotivation;
                         }
+
+                        Vector2 directionOfNearestTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.5f);
+                        myRigidbody2D.velocity = directionOfNearestTargetWaypoint.normalized * enemySpeed;
+                        tempAnimator.SetFloat("Horizontal Axis", directionOfNearestTargetWaypoint.normalized.x);
+                        tempAnimator.SetFloat("Vertical Axis", directionOfNearestTargetWaypoint.normalized.y);
+
+                        if (!checkLineOfSightToPlayer() && myRigidbody2D.velocity.magnitude <= 0.2)
+                            enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
+
                         break;
                     case EnemyState.BEE_LINE_FOR_PLAYER:
-                        Vector2 directionOfPlayer = new Vector2(PersistentData.playerObject.transform.position.x, PersistentData.playerObject.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
-                        if (!checkLineOfSightToPlayer())
-                            enemyMotivation = Mathf.Max(enemyMotivation - ((enemyDemotivationRate) * Time.deltaTime), 0);
-                        myRigidbode2D.velocity = directionOfPlayer.normalized * enemySpeed;
-
-                        if (enemyMotivation == 0)
-                        {
-                            enemyMotivation = 10.0f;
-                            currentEnemyState = EnemyState.PHASE_TO_WAYPOINT;
-                            if (lastTriggeredWaypoint != null)
-                            {
-                                nextTargetedWaypoint = lastTriggeredWaypoint;
-                                lastTriggeredWaypoint = null;
-                            }
-                            else
-                            {
-                                nextTargetedWaypoint = startNode;
-                            }
-                            GetComponent<Collider2D>().enabled = false;
-                        }
+                        Vector2 directionOfPlayer = new Vector2(PlayerLogic.playerObject.transform.position.x, PlayerLogic.playerObject.transform.position.y -0.5f) - new Vector2(transform.position.x, transform.position.y-0.5f);
+                        if (!checkLineOfSightToPlayer() && myRigidbody2D.velocity.magnitude <= 0.2)
+                            enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
+                        myRigidbody2D.velocity = directionOfPlayer.normalized * enemySpeed;
                         tempAnimator.SetFloat("Horizontal Axis", directionOfPlayer.normalized.x);
                         tempAnimator.SetFloat("Vertical Axis", directionOfPlayer.normalized.y);
                         break;
                     case EnemyState.PHASE_TO_WAYPOINT:
-                        Vector2 directionOfLastTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
-                        myRigidbode2D.velocity = directionOfLastTargetWaypoint.normalized * enemySpeed;
+                        if(nextTargetedWaypoint==null)
+                        {
+                            nextTargetedWaypoint = startNode;
+                        }
+                        spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, initialOpacity);
+                        Vector2 directionOfLastTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.5f);
+                        myRigidbody2D.velocity = directionOfLastTargetWaypoint.normalized * enemySpeed;
                         tempAnimator.SetFloat("Horizontal Axis", directionOfLastTargetWaypoint.normalized.x);
                         tempAnimator.SetFloat("Vertical Axis", directionOfLastTargetWaypoint.normalized.y);
-                        if ((Mathf.Abs((nextTargetedWaypoint.transform.position - transform.position).magnitude)) < 0.5)
+                        if (Vector2.Distance(new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y), new Vector2(transform.position.x, transform.position.y - 0.5f)) < 0.1)
                         {
-                            currentEnemyState = EnemyState.FOLLOW_WAYPOINTS;
+                            currentEnemyState = EnemyState.FADE_IN;
                             GetComponent<Collider2D>().enabled = true;
+                            lastTriggeredWaypoint = nextTargetedWaypoint;
+                            enemysCurrentMotivation = enemyDefaultMotivation;
                         }
                         break;
                     case EnemyState.FOLLOW_WAYPOINTS:
+                        if (!checkLineOfSightToPlayer() && myRigidbody2D.velocity.magnitude <= 0.2)
+                            enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
+
+                        Vector2 directionOfPathTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
+                        myRigidbody2D.velocity = directionOfPathTargetWaypoint.normalized * enemySpeed;
+                        tempAnimator.SetFloat("Horizontal Axis", directionOfPathTargetWaypoint.normalized.x);
+                        tempAnimator.SetFloat("Vertical Axis", directionOfPathTargetWaypoint.normalized.y);
+
                         if (pathOfWaypoints.Count > 1 && lastTriggeredWaypoint == pathOfWaypoints[pathOfWaypoints.Count - 1])
                         {
                             nextTargetedWaypoint = pathOfWaypoints[pathOfWaypoints.Count - 2];
@@ -176,17 +263,21 @@ namespace cs
                         {
                             nextTargetedWaypoint = pathOfWaypoints[pathOfWaypoints.Count - 1];
                         }
-                        else
+                        else if(checkLineOfSightToPlayer())
                         {
                             currentEnemyState = EnemyState.BEE_LINE_FOR_PLAYER;
                         }
-                        Vector2 directionOfPathTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y);
-                        myRigidbode2D.velocity = directionOfPathTargetWaypoint.normalized * enemySpeed;
-                        tempAnimator.SetFloat("Horizontal Axis", directionOfPathTargetWaypoint.normalized.x);
-                        tempAnimator.SetFloat("Vertical Axis", directionOfPathTargetWaypoint.normalized.y);
+                        if(nextTargetedWaypoint == lastTriggeredWaypoint)
+                        {
+                            myRigidbody2D.velocity = new Vector2(0, 0);
+                        }
                         break;
                     case EnemyState.FADE_IN:
-                        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                        enemysCurrentMotivation = enemyDefaultMotivation;
+                        if (previousEnemyState!= EnemyState.FADE_IN)
+                        {
+                            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, initialOpacity);
+                        }
                         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, Mathf.Min(1.0f, (spriteRenderer.color.a + (fadeSpeed * Time.deltaTime))));
                         if (spriteRenderer.color.a >= 1)
                             currentEnemyState = EnemyState.GO_TO_NEAREST_WAYPOINT;
@@ -198,13 +289,14 @@ namespace cs
                         break;
                 }
 
+
                 //Debug.Log(currentEnemyState.ToString());
             }
         }
 
         bool checkLineOfSightToPlayer()
         {
-            GameObject playerObject = PersistentData.playerObject;//the player object
+            GameObject playerObject = PlayerLogic.playerObject;//the player object
             GameObject enemyObject = gameObject;//the game object enemy logic is atatched to
 
             bool rayCastHitPlayerObjectDirectlyViaLineOfSight = false;
@@ -217,7 +309,7 @@ namespace cs
             int Enemy = LayerMask.NameToLayer("Enemy");
             int layerMask = (1 << Enemy);
 
-            RaycastHit2D raycast = Physics2D.Raycast(new Vector2(enemyObject.transform.position.x, enemyObject.transform.position.y-0.5f), new Vector2(PersistentData.playerObject.transform.position.x, PersistentData.playerObject.transform.position.y-0.5f) - new Vector2(transform.position.x, transform.position.y-0.5f), Mathf.Infinity, ~layerMask);
+            RaycastHit2D raycast = Physics2D.Raycast(new Vector2(enemyObject.transform.position.x, enemyObject.transform.position.y-0.5f), new Vector2(PlayerLogic.playerObject.transform.position.x, PlayerLogic.playerObject.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.5f), Mathf.Infinity, ~layerMask);
 
             if(raycast.collider!=null)
             {
@@ -225,8 +317,7 @@ namespace cs
                 {
                     rayCastHitPlayerObjectDirectlyViaLineOfSight = true;
                 }
-                Debug.Log("raycast:" + raycast.collider.gameObject);
-                displayObjectsInInspector = raycast.collider.gameObject;
+                raycastTarget = raycast.collider.gameObject;
             }
 
             if(rayCastHitPlayerObjectDirectlyViaLineOfSight)

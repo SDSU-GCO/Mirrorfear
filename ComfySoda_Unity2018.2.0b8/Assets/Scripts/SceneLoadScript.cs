@@ -27,12 +27,6 @@ namespace cs
             PersistentData.xPlayerCoordinate = null;
             PersistentData.yPlayerCoordinate = null;
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 
 }

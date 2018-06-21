@@ -13,9 +13,9 @@ namespace cs
 
 	    // Use this for initialization
 	    void Start () {
-		    if(PersistentData.playerObject!=null)
+		    if(PlayerLogic.playerObject!=null)
             {
-                animator = PersistentData.playerObject.GetComponent<Animator>();
+                animator = PlayerLogic.playerObject.GetComponent<Animator>();
             }
 	    }
 	

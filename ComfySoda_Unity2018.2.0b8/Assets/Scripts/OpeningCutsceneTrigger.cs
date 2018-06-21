@@ -9,9 +9,9 @@ namespace cs
 
         private void Update()
         {
-            if (PersistentData.firstLoadSceneOne && DialogueManager.dialogueManager != null)
+            if (PersistentData.firstLoadSceneOne)
             {
-                DialogueManager.dialogueManager.StartDialogue("Introduction");
+                DialogueManager.StartDialogue("Introduction");
                 PersistentData.firstLoadSceneOne = false;
             }
         }

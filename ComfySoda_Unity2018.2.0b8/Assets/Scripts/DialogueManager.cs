@@ -9,7 +9,7 @@ namespace cs
 {
     public class DialogueManager : MonoBehaviour
     {
-        public static DialogueManager dialogueManager = null;
+        public static bool DialogueManagerOpen = false;
         public TextMeshProUGUI nameText = null;
         public TextMeshProUGUI dialogueText = null;
         public Image portrait = null;
@@ -17,6 +17,7 @@ namespace cs
         public Sprite mirrirChild = null;
         public Sprite Blank = null;
         private Coroutine scrollingTextCoroutune = null;
+        private static DialogueManager dialogueManager = null;
 
         public Animator animator = null;
         public int characterPerSecond = 10;
@@ -24,29 +25,66 @@ namespace cs
         List<Parser.DialogueStructure> Conversation;
 
         private int sentenceCounter = 0;
-
-        private void OnEnable()
+        
+        private void Start()
         {
+            DialogueManagerOpen = false;
+            if (dialogueManager != null)
+            {
+                Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
+            }
             dialogueManager = this;
         }
-        private void OnDisable()
+
+        private void onenable()
         {
-            if(dialogueManager==this)
+            if(dialogueManager!=this)
+            {
+                Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
+            }
+            dialogueManager = this;
+        }
+        private void ondisable()
+        {
+            if (dialogueManager == this)
             {
                 dialogueManager = null;
             }
+            else
+            {
+                Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
+            }
         }
 
-        public void StartDialogue(string cutscene)
+        public static void StartDialogue(string theScene)
         {
+            if(dialogueManager!=null)
+            {
+                dialogueManager.PrivateStartDialogue(theScene);
+            }
+            else
+            {
+                Debug.LogError("There should is no \"DialogManager\" set on a dialog box!\nDid you add one to the scene?");
+            }
+        }
+
+        void PrivateStartDialogue(string cutscene)
+        {
+            DialogueManagerOpen = true;
             animator.SetBool("IsOpen", true);
 
             Conversation = Dialoguehandler.getSceneData(cutscene);
 
             sentenceCounter = 0;
-
-
+            
             DisplayNextSentence();
+        }
+
+        public void EndDialogue()
+        {
+            animator.SetBool("IsOpen", false);
+            DialogueManagerOpen = false;
+            EnemyLogic.disableEnimies = false;
         }
 
         public void DisplayNextSentence()
@@ -144,14 +182,6 @@ namespace cs
         private void frameEnd(ref float? lastFrame, float currentTime)
         {
             lastFrame = currentTime;
-        }
-
-
-
-
-        public void EndDialogue()
-        {
-            animator.SetBool("IsOpen", false);
         }
     }
 

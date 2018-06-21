@@ -8,26 +8,36 @@ namespace cs
     {
         ProximityTrigger proximityTrigger;
         public string sceneToLoad = "";
-
-
+        
         private void OnEnable()
         {
             proximityTrigger = GetComponent<ProximityTrigger>();
-            proximityTrigger.proximityActionFunction = StartConversation;
+            if (proximityTrigger!=null)
+            {
+                proximityTrigger.proximityActionFunction.AddListener(StartConversation);
+            }
+            else
+            {
+                Debug.LogError("There must be a \"ProximityTrigger\" on an object to use the \"BeginConversation\" script!");
+            }
         }
 
         private void OnDisable()
         {
-            if(proximityTrigger!=null && proximityTrigger.proximityActionFunction==StartConversation)
+            if(proximityTrigger==null)
             {
-                proximityTrigger.proximityActionFunction = null;
+                Debug.LogError("There must be a \"ProximityTrigger\" on an object to use the \"BeginConversation\" script!");
+            }
+            else
+            {
+                proximityTrigger.proximityActionFunction.RemoveListener(StartConversation);
             }
             
         }
 
         void StartConversation()
         {
-            DialogueManager.dialogueManager.StartDialogue(sceneToLoad);
+           DialogueManager.StartDialogue(sceneToLoad);
         }
     }
 

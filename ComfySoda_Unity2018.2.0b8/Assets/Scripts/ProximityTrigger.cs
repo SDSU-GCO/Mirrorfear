@@ -4,22 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace cs
 {
-    public delegate void ProximityActionFunction();
     public class ProximityTrigger : MonoBehaviour
     {
+        
+        public UnityEvent proximityActionFunction;
         public Text scenePromptText = null;
         public string SceneToLoad = "SampleScene";
         public bool useCoordinates = false;
         public string prompt = "Press 'E' to interact";
         bool isColliding;
-        public ProximityActionFunction proximityActionFunction = null;
+        void Awake()
+        {
+            if (proximityActionFunction == null)
+                proximityActionFunction = new UnityEvent();
+        }
 
         private void OnEnable()
         {
-            scenePromptText = PersistentData.proximityText;
+            scenePromptText = MessageBoxTagger.proximityText;
         }
         
 
@@ -39,20 +45,32 @@ namespace cs
         {
             if (Input.GetKeyDown(KeyCode.E) && isColliding)
             {
-                proximityActionFunction();
+                proximityActionFunction.Invoke();
             }
         }
 
         private void hidePrompt()
         {
             if (scenePromptText != null)
+            {
                 scenePromptText.text = "";
+            }
+            else
+            {
+                Debug.LogError("No MessageBox Text Component has been tagged in this scene or it was cleared!");
+            }
         }
 
         private void displayPrompt()
         {
             if (scenePromptText != null)
+            {
                 scenePromptText.text = prompt;
+            }
+            else
+            {
+                Debug.LogError("No MessageBox Text Component has been tagged in this scene or it was cleared!");
+            }
         }
     }
 

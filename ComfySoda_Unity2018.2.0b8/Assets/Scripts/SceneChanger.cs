@@ -19,9 +19,9 @@ namespace cs
 
         private void OnEnable()
         {
-            if(scenePromptText==null && PersistentData.proximityText!=null)
+            if(scenePromptText==null && MessageBoxTagger.proximityText!=null)
             {
-                scenePromptText = PersistentData.proximityText;
+                scenePromptText = MessageBoxTagger.proximityText;
             }
         }
         private void OnDisable()
@@ -62,9 +62,9 @@ namespace cs
 
         private void hidePrompt()
         {
-            if (scenePromptText == null && PersistentData.proximityText != null)
+            if (scenePromptText == null && MessageBoxTagger.proximityText != null)
             {
-                scenePromptText = PersistentData.proximityText;
+                scenePromptText = MessageBoxTagger.proximityText;
             }
             if(scenePromptText!=null)
                 scenePromptText.text = "";
@@ -72,9 +72,9 @@ namespace cs
 
         private void displayPrompt()
         {
-            if (scenePromptText == null && PersistentData.proximityText != null)
+            if (scenePromptText == null && MessageBoxTagger.proximityText != null)
             {
-                scenePromptText = PersistentData.proximityText;
+                scenePromptText = MessageBoxTagger.proximityText;
             }
             if (scenePromptText != null)
                 scenePromptText.text = "Press 'E' to change floors.";
