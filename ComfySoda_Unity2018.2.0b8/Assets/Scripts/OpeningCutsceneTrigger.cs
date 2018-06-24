@@ -7,7 +7,7 @@ namespace cs
     public class OpeningCutsceneTrigger : MonoBehaviour
     {
 
-        private void Update()
+        private void Awake()
         {
             if (PersistentData.firstLoadSceneOne)
             {

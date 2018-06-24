@@ -7,8 +7,8 @@ namespace cs
 
     public class EnemyLogic : MonoBehaviour
     {
-        public static List<EnemyLogic> enemyLogicsInBossRange;
-        public static List<EnemyLogic> enemyLogicsInMobRange;
+        public static List<EnemyLogic> enemyLogicsInBossRange = new List<EnemyLogic>();
+        public static List<EnemyLogic> enemyLogicsInMobRange = new List<EnemyLogic>();
         public static bool disableEnimies = false;
         SpriteRenderer spriteRenderer;
         public float fadeSpeed = 0.01f;
@@ -27,32 +27,13 @@ namespace cs
         Rigidbody2D myRigidbody2D;
         Animator tempAnimator;
 
-       
 
-        private void OnEnable()
-        {
-            if(enemyLogicsInBossRange==null)
-            {
-                enemyLogicsInBossRange = new List<EnemyLogic>();
-            }
-            
-        }
-
-        // Use this for initialization
-        void Start()
+        private void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             enemyDefaultMotivation = enemysCurrentMotivation;
             myRigidbody2D = GetComponent<Rigidbody2D>();
             tempAnimator = GetComponent<Animator>();
-            if (enemyLogicsInBossRange == null)
-            {
-                enemyLogicsInBossRange = new List<EnemyLogic>();
-            }
-            if (enemyLogicsInMobRange == null)
-            {
-                enemyLogicsInMobRange = new List<EnemyLogic>();
-            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

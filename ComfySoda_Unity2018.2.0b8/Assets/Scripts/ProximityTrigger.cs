@@ -10,25 +10,36 @@ namespace cs
 {
     public class ProximityTrigger : MonoBehaviour
     {
-        
-        public UnityEvent proximityActionFunction;
-        public Text scenePromptText = null;
-        public string SceneToLoad = "SampleScene";
-        public bool useCoordinates = false;
-        public string prompt = "Press 'E' to interact";
+        public delegate bool ProximityTriggerConditionCheck();
+        public UnityEvent proximityActionFunction = new UnityEvent();
+        public string triggerName = "";
+        public ProximityTriggerConditionCheck proximityTriggerConditionCheck = null;
+
+        [Serializable]
+        public class SceneParameters
+        {
+            public bool useTarget;
+            public Vector2 target;
+            public SceneParameters()
+            {
+                useTarget = false;
+                target.x = 0;
+                target.y = 0;
+            }
+        }
+
+        //private but visible in editor
+        [SerializeField]
+        Text scenePromptText = null;
+        [SerializeField]
+        string prompt = "Press 'E' to interact";
+        [SerializeField]
+        SceneParameters sceneParameters;
+
+        //private
         bool isColliding;
-        void Awake()
-        {
-            if (proximityActionFunction == null)
-                proximityActionFunction = new UnityEvent();
-        }
-
-        private void OnEnable()
-        {
-            scenePromptText = MessageBoxTagger.proximityText;
-        }
         
-
+        
         private void OnTriggerEnter2D(Collider2D collision)
         {
             displayPrompt();
@@ -45,15 +56,23 @@ namespace cs
         {
             if (Input.GetKeyDown(KeyCode.E) && isColliding)
             {
-                proximityActionFunction.Invoke();
+                if(proximityTriggerConditionCheck==null || proximityTriggerConditionCheck())
+                {
+                    proximityActionFunction.Invoke();
+                }
             }
         }
 
         private void hidePrompt()
         {
+            if (scenePromptText == null)
+                scenePromptText = MessageBoxTagger.proximityText;
             if (scenePromptText != null)
             {
-                scenePromptText.text = "";
+                if (proximityTriggerConditionCheck == null || proximityTriggerConditionCheck())
+                {
+                    scenePromptText.text = "";
+                }
             }
             else
             {
@@ -63,14 +82,40 @@ namespace cs
 
         private void displayPrompt()
         {
+            if(scenePromptText==null)
+                scenePromptText = MessageBoxTagger.proximityText;
             if (scenePromptText != null)
             {
-                scenePromptText.text = prompt;
+                if (proximityTriggerConditionCheck == null || proximityTriggerConditionCheck())
+                {
+                    scenePromptText.text = prompt;
+                }
             }
             else
             {
                 Debug.LogError("No MessageBox Text Component has been tagged in this scene or it was cleared!");
             }
+        }
+
+        public void StartConversation(string cutscene)
+        {
+            DialogueManager.StartDialogue(cutscene);
+        }
+        
+        public void LoadScene(string SceneToLoad)
+        {
+            if (sceneParameters.useTarget)
+            {
+                PersistentData.xPlayerCoordinate = sceneParameters.target.x;
+                PersistentData.yPlayerCoordinate = sceneParameters.target.y;
+            }
+            else
+            {
+                PersistentData.xPlayerCoordinate = null;
+                PersistentData.yPlayerCoordinate = null;
+            }
+
+            SceneManager.LoadScene(SceneToLoad);
         }
     }
 

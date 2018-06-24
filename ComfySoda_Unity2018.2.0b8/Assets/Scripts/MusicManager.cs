@@ -18,9 +18,7 @@ namespace cs
         private MusicState prevState;
         // Use this for initialization
 
-
-
-        void Start()
+        private void Awake()
         {
             if (!mainMusic || !mob || !boss)
             {
@@ -40,6 +38,7 @@ namespace cs
                 boss.Play();
             }
         }
+        
 
         // Update is called once per frame
         void Update()

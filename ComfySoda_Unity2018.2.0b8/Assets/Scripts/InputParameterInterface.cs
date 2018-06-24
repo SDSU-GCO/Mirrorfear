@@ -7,32 +7,35 @@ namespace cs
     public class InputParameterInterface : MonoBehaviour {
 
         Animator animator = null;
+        Rigidbody2D playerRigidbody2D = null;
         bool previouslyIdle = false;
         float verticalMemory=1;
         float horizontalMemory=0;
-
-	    // Use this for initialization
-	    void Start () {
-		    if(PlayerLogic.playerObject!=null)
+	
+	    // Update is called once per frame
+	    void Update ()
+        {
+            if (PlayerLogic.playerObject != null && animator == null)
             {
                 animator = PlayerLogic.playerObject.GetComponent<Animator>();
             }
-	    }
-	
-	    // Update is called once per frame
-	    void Update () {
-            if(animator!=null)
+            if (PlayerLogic.playerObject != null && playerRigidbody2D == null)
             {
-                animator.SetFloat("Horizontal Axis", Input.GetAxis("Horizontal"));
-                animator.SetFloat("Vertical Axis", Input.GetAxis("Vertical"));
+                playerRigidbody2D = PlayerLogic.playerObject.GetComponent<Rigidbody2D>();
+            }
 
-                if (Mathf.Abs(Input.GetAxis("Horizontal")) <= 0.1 && Mathf.Abs(Input.GetAxis("Vertical")) <= 0.1)
+            if (animator!=null && playerRigidbody2D != null)
+            {
+                animator.SetFloat("Horizontal Axis", playerRigidbody2D.velocity.normalized.x);
+                animator.SetFloat("Vertical Axis", playerRigidbody2D.velocity.normalized.y);
+
+                if (Mathf.Abs(playerRigidbody2D.velocity.normalized.x) <= 0.1 && Mathf.Abs(playerRigidbody2D.velocity.normalized.y) <= 0.1)
                 {
                     animator.SetBool("idle", true);
                     if(previouslyIdle!=true)
                     {
-                        verticalMemory = Input.GetAxis("Vertical");
-                        horizontalMemory = Input.GetAxis("Horizontal");
+                        verticalMemory = playerRigidbody2D.velocity.normalized.y;
+                        horizontalMemory = playerRigidbody2D.velocity.normalized.x;
                     }
                     else
                     {

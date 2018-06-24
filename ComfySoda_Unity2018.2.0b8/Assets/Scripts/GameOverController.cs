@@ -7,24 +7,27 @@ namespace cs
 {
     public class GameOverController : MonoBehaviour
     {
-        public Image GameOverScreen = null;
-        public float fadeSpeed = 0.05f;
+        public static bool gameIsOver = true;
+        [SerializeField]
+        Image GameOverScreen = null;
+        [SerializeField]
+        float fadeSpeed = 0.05f;
 
         delegate void Function();
         static Function function;
 
-        void OnEnable()
+        private void Awake()
         {
-            if(function != null)
+            if (function != null)
             {
                 Debug.LogWarning("There should only be one \"GameOverController\" per scene!");
             }
             function = StartDisplayingGameOver;
         }
 
-        void OnDisable()
+        private void OnDestroy()
         {
-            if(function != StartDisplayingGameOver)
+            if (function != StartDisplayingGameOver)
             {
                 Debug.LogWarning("There should only be one \"GameOverController\" per scene!");
             }
@@ -33,7 +36,7 @@ namespace cs
                 function = null;
             }
         }
-
+        
         public static void StartGameOver()
         {
             function();

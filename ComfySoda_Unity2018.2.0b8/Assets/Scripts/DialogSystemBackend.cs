@@ -21,24 +21,7 @@ namespace cs
 
                 if(speaker!="")
                 {
-                    switch (speaker)
-                    {
-                        case "Child":
-                            tempDialogueStructure.speaker = Parser.Speaker.PLAYER_NAME;
-                            break;
-                        case "Mirror Child":
-                        case "MirrorChild":
-                            tempDialogueStructure.speaker = Parser.Speaker.ENEMY_NAME;
-                            break;
-                        case "Blank":
-                            tempDialogueStructure.speaker = Parser.Speaker.BLANK;
-                            break;
-                        default:
-                            tempDialogueStructure.speaker = Parser.Speaker.ERROR;
-                            Debug.Log("Error in dialog files: DialogFiles/"+cutscene+".txt");
-                            break;
-                    }
-
+                    tempDialogueStructure.speaker = speaker;
 
                     if (!inputStream.EndOfStream)
                     {
@@ -51,35 +34,7 @@ namespace cs
                     }
                 }
             }
-
-
-
-            switch (Script[0].speaker)
-            {
-                //determine speaker and portraits
-                case Parser.Speaker.PLAYER_NAME:
-                    break;
-                default:
-                    break;
-            }
-            if(Script[0].dialogue[0].character != null)
-            {
-                //get character to print
-                //char temp = (char) Script[0].dialogue[0].character;
-            }
-            if (Script[0].dialogue[0].action != null)
-            {
-                //perform any actions/function calls
-                switch (Script[0].dialogue[0].action)
-                {
-                    case Parser.Action.RING_BELL:
-                        break;
-                    default:
-                        Debug.Log("Error in dialog!");
-                        break;
-                }
-            }
-
+            
             return Script;
         }
 
@@ -87,19 +42,17 @@ namespace cs
 
     public static class Parser
     {
-        public enum Speaker { PLAYER_NAME, ENEMY_NAME, BLANK, ERROR };
-        public enum Action { RING_BELL, ERROR };
 
         public struct ActionCharacter
         {
             public char? character;
-            public Action? action;
+            public string action;
         }
 
         public struct DialogueStructure
         {
             public List<ActionCharacter> dialogue;
-            public Speaker speaker;
+            public string speaker;
         }
 
         public static List<ActionCharacter> parseLine(string lineToParse)
@@ -110,7 +63,7 @@ namespace cs
             for (int i = 0; i < lineToParse.Length; i++)
             {
                 ActionCharacter tempActionCharacter;
-                tempActionCharacter.action = null;
+                tempActionCharacter.action = "";
                 tempActionCharacter.character = null;
             
 
@@ -121,14 +74,26 @@ namespace cs
                         tempActionCharacter.character = '\\';
                         i++;
                     }
-                    else if (lineToParse.containsSubstringAtPosition("RING_BELL", i + 1))
-                    {
-                        tempActionCharacter.action = Action.RING_BELL;
-                        i += "RING_BELL".Length;
-                    }
                     else if (lineToParse.containsSubstringAtPosition("Player Name", i + 1))
                     {
-                        replaceSubStringAtPosition(ref lineToParse, "Player Name", "Comfy Soda Boy", i + 1);
+                        replaceSubStringAtPosition(ref lineToParse, "Player Name", "Timmy", i + 1);
+                    }
+                    else if (lineToParse.containsSubstringAtPosition("DYNAMIC_ACTION: ", i + 1))
+                    {
+                        tempActionCharacter.action = "DYNAMIC_ACTION: ";
+                        i += "DYNAMIC_ACTION: ".Length;
+
+                        i++;
+                        while (lineToParse[i] != '\\' && lineToParse[i+1]!='n')
+                        {
+                            if(lineToParse[i] == '\\' && lineToParse[i + 1] == '\\')
+                            {
+                                tempActionCharacter.action += lineToParse[i];
+                                i++;
+                            }
+                            i++;
+                        }
+                        i++;
                     }
                 }
                 else
@@ -140,7 +105,7 @@ namespace cs
             return dialogueLine;
         }
 
-        static void replaceSubStringAtPosition(ref string completeString, string substringToReplace, string replacementString, int position)
+        public static void replaceSubStringAtPosition(ref string completeString, string substringToReplace, string replacementString, int position)
         {
             string temp="";
             for(int i = 0; i<position; i++)

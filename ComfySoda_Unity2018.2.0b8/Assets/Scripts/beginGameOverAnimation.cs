@@ -11,32 +11,21 @@ namespace cs
         Animator animator = null;
 
         // Use this for initialization
-        void Start()
+        private void Awake()
         {
             gameOverScreen = GetComponent<Image>();
             animator = GetComponent<Animator>();
+
+            if (animator == null || gameOverScreen == null)
+                Debug.LogError("The \"beginGameOverAnimation\" script should be atatched to the game over screen game object with an image and an animator!");
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(gameOverScreen!=null)
+            if(gameOverScreen.color.a>=1)
             {
-                if(gameOverScreen.color.a>=1)
-                {
-                    if(animator!=null)
-                    {
-                        animator.SetBool("Play Game Over Animation", true);
-                    }
-                    else
-                    {
-                        animator = GetComponent<Animator>();
-                    }
-                }
-            }
-            else
-            {
-                gameOverScreen = GetComponent<Image>();
+                animator.SetBool("Play Game Over Animation", true);
             }
         }
     }

@@ -8,18 +8,13 @@ namespace cs
     
     public class SceneLocalStaticsManager : MonoBehaviour
     {
-        // Use this for initialization
-        void Start()
-        {
-
-        }
-
         // Update is called once per frame
         void Update()
         {
             if(DialogueManager.DialogueManagerOpen)
             {
                 EnemyLogic.disableEnimies = true;
+                PlayerLogic.disablePlayer = true;
             }
 
 

@@ -13,13 +13,13 @@ namespace cs
         public string WaypointName = "";
 
 
-        private void OnEnable()
+        private void Awake()
         {
             waypoints.Add(this);
             this.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             waypoints.Remove(this);
             this.GetComponent<SpriteRenderer>().enabled = true;

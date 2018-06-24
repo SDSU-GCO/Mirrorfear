@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -9,43 +10,60 @@ namespace cs
 {
     public class DialogueManager : MonoBehaviour
     {
-        public static bool DialogueManagerOpen = false;
-        public TextMeshProUGUI nameText = null;
-        public TextMeshProUGUI dialogueText = null;
-        public Image portrait = null;
-        public Sprite timmy = null;
-        public Sprite mirrirChild = null;
-        public Sprite Blank = null;
-        private Coroutine scrollingTextCoroutune = null;
-        private static DialogueManager dialogueManager = null;
-
-        public Animator animator = null;
-        public int characterPerSecond = 10;
-
-        List<Parser.DialogueStructure> Conversation;
-
-        private int sentenceCounter = 0;
-        
-        private void Start()
+        [Serializable]
+        public struct Portraits
         {
+            public Sprite timmy;
+            public Sprite mirrorChild;
+            public Sprite Blank;
+        }
+        
+        public static bool DialogueManagerOpen = false;
+        public int? characterPerSecondOverride = null;
+        [SerializeField]
+        int characterPerSecond = 10;
+        [SerializeField]
+        Animator animator = null;
+        [SerializeField]
+        TextMeshProUGUI nameText = null;
+        [SerializeField]
+        TextMeshProUGUI dialogueText = null;
+        [SerializeField]
+        Image currentPortrait = null;
+        [SerializeField]
+        Portraits portraits = new Portraits
+        {
+            timmy=null,
+            mirrorChild=null,
+            Blank=null,
+        };
+
+        static DialogueManager dialogueManager = null;
+        Dictionary<string, DialogInstructionSet.ActionFunction> actionFunctions = new Dictionary<string, DialogInstructionSet.ActionFunction>();
+        Coroutine scrollingTextCoroutune = null;
+        List<Parser.DialogueStructure> Conversation;
+        int sentenceCounter = 0;
+        int characterPerSecondDefaultForScene;
+
+
+        private void Awake()
+        {
+            characterPerSecondDefaultForScene = characterPerSecond;
             DialogueManagerOpen = false;
             if (dialogueManager != null)
             {
                 Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
             }
             dialogueManager = this;
+            if(animator==null)
+            {
+                animator = GetComponent<Animator>();
+            }
         }
 
-        private void onenable()
+        private void OnDestroy()
         {
-            if(dialogueManager!=this)
-            {
-                Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
-            }
-            dialogueManager = this;
-        }
-        private void ondisable()
-        {
+            DialogueManagerOpen = false;
             if (dialogueManager == this)
             {
                 dialogueManager = null;
@@ -53,6 +71,18 @@ namespace cs
             else
             {
                 Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
+            }
+        }
+
+        public static void StartDialogue(string theScene, DialogInstructionSet dialogInstructionSet)
+        {
+            if (dialogueManager != null)
+            {
+                dialogueManager.PrivateStartDialogue(theScene, dialogInstructionSet);
+            }
+            else
+            {
+                Debug.LogError("There is no \"DialogManager\" set on a dialog box!\nDid you add one to the scene?");
             }
         }
 
@@ -64,12 +94,39 @@ namespace cs
             }
             else
             {
-                Debug.LogError("There should is no \"DialogManager\" set on a dialog box!\nDid you add one to the scene?");
+                Debug.LogError("There is no \"DialogManager\" set on a dialog box!\nDid you add one to the scene?");
             }
+        }
+
+        void PrivateStartDialogue(string cutscene, DialogInstructionSet dialogInstructionSet)
+        {
+
+            if (dialogInstructionSet != null)
+            {
+                foreach (KeyValuePair<string, DialogInstructionSet.ActionFunction> actionFunction in dialogInstructionSet.actionFunctions)
+                {
+                    actionFunctions.Add(actionFunction.Key, actionFunction.Value);
+                }
+            }
+            else
+            {
+                actionFunctions.Clear();
+            }
+            PrivateStartDialogue(cutscene);
         }
 
         void PrivateStartDialogue(string cutscene)
         {
+            if(characterPerSecondOverride!=null)
+            {
+                characterPerSecond = (int)characterPerSecondOverride;
+            }
+            else
+            {
+                characterPerSecond = characterPerSecondDefaultForScene;
+            }
+
+
             DialogueManagerOpen = true;
             animator.SetBool("IsOpen", true);
 
@@ -85,6 +142,8 @@ namespace cs
             animator.SetBool("IsOpen", false);
             DialogueManagerOpen = false;
             EnemyLogic.disableEnimies = false;
+            PlayerLogic.disablePlayer = false;
+            actionFunctions.Clear();
         }
 
         public void DisplayNextSentence()
@@ -103,22 +162,22 @@ namespace cs
 
             switch (Conversation[sentenceCounter].speaker)
             {
-                case Parser.Speaker.PLAYER_NAME:
+                case "Child":
                     nameText.text = "Timmy";
-                    portrait.overrideSprite = timmy;
+                    currentPortrait.overrideSprite = portraits.timmy;
                     break;
-                case Parser.Speaker.ENEMY_NAME:
+                case "ENEMY_NAME":
                     nameText.text = "Mirror Timmy";
-                    portrait.overrideSprite = mirrirChild;
+                    currentPortrait.overrideSprite = portraits.mirrorChild;
                     break;
-                case Parser.Speaker.BLANK:
+                case "BLANK":
                     nameText.text = " ";
-                    portrait.overrideSprite = Blank;
+                    currentPortrait.overrideSprite = portraits.Blank;
                     break;
-                case Parser.Speaker.ERROR:
+                case "ERROR":
                     break;
                 default:
-                    Debug.Log("invalid speaker for conversation");
+                    Debug.Log("invalid speaker for conversation: "+ Conversation[sentenceCounter].speaker);
                     break;
             }
 
@@ -147,15 +206,26 @@ namespace cs
                             dialogueText.text += sentence.dialogue[0].character;
                             sentence.dialogue.Remove(sentence.dialogue[0]);
                         }
-                        else if (sentence.dialogue[0].action != null)
+                        else if (sentence.dialogue[0].action != "")
                         {
-                            switch (sentence.dialogue[0].action)
+                            if(sentence.dialogue[0].action.Contains("DYNAMIC_ACTION: "))
                             {
-                                case Parser.Action.RING_BELL:
-                                    break;
-                                default:
-                                    Debug.Log("Error in dialog!");
-                                    break;
+                                sentence.dialogue[0].action.Remove(0, "DYNAMIC_ACTION: ".Length);
+
+                                if (actionFunctions.ContainsKey(sentence.dialogue[0].action))
+                                {
+                                    //trigger the action function
+                                    actionFunctions[sentence.dialogue[0].action].Invoke();
+                                }
+                                else
+                                {
+                                    if(actionFunctions.Count==0)
+                                    {
+                                        Debug.LogError("No Instruction set found!  Please load an instructionset before invoking instructions!");
+                                    }
+                                    Debug.LogError("ActionFunction in DialogueManager not found in instructionset: " + sentence.dialogue[0].action);
+                                }
+
                             }
                         }
 

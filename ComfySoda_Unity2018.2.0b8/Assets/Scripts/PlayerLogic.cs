@@ -9,12 +9,13 @@ namespace cs
     {
         public static GameObject playerObject = null;
         public static bool disablePlayer = false;
+        public static bool disablePlayerPreviousFrame = false;
         public float speed = 1.0f;
 
 	    // Use this for initialization
-	    void Start ()
+	    private void Awake ()
         {
-            if (playerObject != null)
+            if (playerObject == null)
             {
                 playerObject = gameObject;
             }
@@ -22,26 +23,22 @@ namespace cs
             {
                 Debug.LogWarning("There is more than one player in the scene, is this intentional?");
             }
+
+
+            if (PersistentData.xPlayerCoordinate != null && PersistentData.yPlayerCoordinate != null)
+            {
+                transform.SetPositionAndRotation(new Vector3((float)PersistentData.xPlayerCoordinate, (float)PersistentData.yPlayerCoordinate, transform.position.z), new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
+            }
+
+            PersistentData.xPlayerCoordinate = null;
+            PersistentData.yPlayerCoordinate = null;
         }
 
-
-        private void OnDisable()
+        private void OnDestroy()
         {
             if (playerObject == gameObject)
             {
                 playerObject = null;
-            }
-            else
-            {
-                Debug.LogWarning("There is more than one player in the scene, is this intentional?");
-            }
-        }
-
-        private void OnEnable()
-        {
-            if (playerObject != gameObject)
-            {
-                playerObject = gameObject;
             }
             else
             {
@@ -57,10 +54,11 @@ namespace cs
             {
                 rigidbody2D.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized * speed;
             }
-            else
+            else if(disablePlayerPreviousFrame==true)
             {
                 rigidbody2D.velocity = new Vector2(0, 0);
             }
+            disablePlayerPreviousFrame = disablePlayer;
         }
     }
 
