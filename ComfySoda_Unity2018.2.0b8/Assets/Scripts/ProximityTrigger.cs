@@ -16,7 +16,7 @@ namespace cs
         public ProximityTriggerConditionCheck proximityTriggerConditionCheck = null;
 
         [Serializable]
-        public class SceneParameters
+        private class SceneParameters
         {
             public bool useTarget;
             public Vector2 target;
@@ -27,6 +27,12 @@ namespace cs
                 target.y = 0;
             }
         }
+        [Serializable]
+        private class DialogueParameters
+        {
+            public DialogInstructionSet dialogInstructionSet = null;
+            public string instructionSetName = "";
+        }
 
         //private but visible in editor
         [SerializeField]
@@ -34,7 +40,9 @@ namespace cs
         [SerializeField]
         string prompt = "Press 'E' to interact";
         [SerializeField]
-        SceneParameters sceneParameters;
+        DialogueParameters dialogueParameters = null;
+        [SerializeField]
+        SceneParameters sceneParameters = null;
 
         //private
         bool isColliding;
@@ -99,7 +107,14 @@ namespace cs
 
         public void StartConversation(string cutscene)
         {
-            DialogueManager.StartDialogue(cutscene);
+            if(false)
+            {
+                //DialogueManager.StartDialogue(cutscene, dialogInstructionSet);
+            }
+            else
+            {
+                DialogueManager.StartDialogue(cutscene);
+            }
         }
         
         public void LoadScene(string SceneToLoad)
