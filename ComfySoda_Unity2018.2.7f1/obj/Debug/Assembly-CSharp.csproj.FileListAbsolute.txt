@@ -1,0 +1,622 @@
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Assembly-CSharp.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Boo.Lang.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Facebook.Unity.Settings.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\mscorlib.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\System.Core.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\System.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\System.Runtime.Serialization.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\System.Xml.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\System.Xml.Linq.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.Locator.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.TextMeshPro.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEditor.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEditor.StandardEvents.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AIModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AnimationModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ARModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AudioModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.BaselibModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ClothModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.CoreModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.DirectorModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.FacebookModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.GridModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.HoloLens.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.InputModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Purchasing.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.StandardEvents.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.StreamingModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TerrainModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TilemapModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Timeline.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TimelineModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TLSModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UI.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UIModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UmbraModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UNETModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.VideoModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.VRModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.WindModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.XRModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityScript.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityScript.Lang.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Vuforia.UnityExtensions.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.Cecil.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.DataContract.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\ExCSS.Unity.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Boo.Lang.Parser.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Boo.Lang.Compiler.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.IvyParser.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Boo.Lang.PatternMatching.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Boo.Lang.Useful.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Unity.CecilTools.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEditor.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AIModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ARModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AnimationModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.AudioModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.BaselibModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ClothModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.CoreModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.DirectorModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.FacebookModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.GridModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.InputModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.StreamingModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TLSModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TerrainModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TilemapModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.TimelineModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UIModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UNETModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UmbraModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.VRModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.VideoModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.WindModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.XRModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\Vuforia.UnityExtensions.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.UI.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.Timeline.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.xml
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\obj\Debug\Assembly-CSharp.csproj.CopyComplete
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\obj\Debug\Assembly-CSharp.dll
+C:\WorkingDevelopment\UnityWorkSpace\ComfySoda\obj\Debug\Assembly-CSharp.pdb
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Facebook.Unity.Settings.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\mscorlib.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Core.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Serialization.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.Linq.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.Locator.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.TextMeshPro.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEditor.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEditor.StandardEvents.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AIModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Analytics.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AnimationModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ARModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AudioModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.BaselibModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClothModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CoreModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.DirectorModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FacebookModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GridModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HoloLens.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.InputModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Purchasing.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StandardEvents.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StreamingModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TilemapModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Timeline.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TimelineModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TLSModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UI.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UmbraModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UNETModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VideoModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VRModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.WindModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.XRModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityScript.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityScript.Lang.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Vuforia.UnityExtensions.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.Cecil.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.DataContract.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\ExCSS.Unity.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.Parser.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.Compiler.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.IvyParser.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.PatternMatching.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.Useful.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEditor.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AIModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ARModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AnimationModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AudioModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.BaselibModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClothModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CoreModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.DirectorModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FacebookModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GridModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.InputModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StreamingModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TLSModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TilemapModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TimelineModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UNETModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UmbraModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VRModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VideoModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.WindModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.XRModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Vuforia.UnityExtensions.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UI.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Timeline.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HoloLens.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.xml
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.csproj.CopyComplete
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.dll
+D:\Users\Anonymous\Box Sync\GCO\GCO Resources\Game Jam 2018\ComfySoda\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.pdb
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Assembly-CSharp.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Facebook.Unity.Settings.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\mscorlib.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Core.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Serialization.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.Linq.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.Locator.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.TextMeshPro.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEditor.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEditor.StandardEvents.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AIModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AnimationModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ARModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AssetBundleModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AudioModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.BaselibModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClothModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterInputModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterRendererModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CoreModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CrashReportingModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.DirectorModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FacebookModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GameCenterModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GridModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HoloLens.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HotReloadModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ImageConversionModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.IMGUIModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.InputModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.JSONSerializeModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.LocalizationModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticleSystemModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Physics2DModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PhysicsModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Purchasing.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StandardEvents.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StreamingModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StyleSheetsModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SubstanceModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TextRenderingModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TilemapModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Timeline.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TimelineModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TLSModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UI.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIElementsModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UmbraModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UNETModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityConnectModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VehiclesModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VideoModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VRModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.WindModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.XRModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityScript.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityScript.Lang.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Vuforia.UnityExtensions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.Cecil.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.DataContract.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\ExCSS.Unity.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.Parser.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.Compiler.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.IvyParser.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.PatternMatching.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Boo.Lang.Useful.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Unity.CecilTools.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEditor.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AIModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ARModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AnimationModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AssetBundleModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.AudioModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.BaselibModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClothModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CloudWebServicesModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterInputModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ClusterRendererModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CoreModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.CrashReportingModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.DirectorModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FacebookModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.FileSystemHttpModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GameCenterModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GridModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HotReloadModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.IMGUIModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ImageConversionModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.InputModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.JSONSerializeModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.LocalizationModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticleSystemModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PerformanceReportingModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.PhysicsModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Physics2DModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ProfilerModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SharedInternalsModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteMaskModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpriteShapeModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StreamingModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.StyleSheetsModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SubstanceModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TLSModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TerrainPhysicsModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TextRenderingModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TilemapModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.TimelineModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UIElementsModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UNETModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UmbraModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityAnalyticsModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityConnectModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAssetBundleModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestAudioModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestTextureModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UnityWebRequestWWWModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VRModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VehiclesModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.VideoModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.WindModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.XRModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Vuforia.UnityExtensions.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.UI.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.Timeline.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\UnityEngine.ParticlesLegacyModule.xml
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.csproj.CopyComplete
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\obj\Debug\Assembly-CSharp.pdb
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\netstandard.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.AppContext.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Collections.Concurrent.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Collections.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Collections.NonGeneric.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Collections.Specialized.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ComponentModel.Annotations.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ComponentModel.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ComponentModel.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ComponentModel.TypeConverter.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Console.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Data.Common.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.Contracts.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.Debug.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.Process.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.StackTrace.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.Tools.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Diagnostics.TraceSource.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Drawing.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Dynamic.Runtime.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Globalization.Calendars.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Globalization.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Globalization.Extensions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.FileSystem.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.FileSystem.Watcher.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.IsolatedStorage.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.MemoryMappedFiles.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.Pipes.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Linq.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Linq.Expressions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Linq.Parallel.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Linq.Queryable.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.Http.Rtc.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.NameResolution.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.NetworkInformation.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.Ping.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.Requests.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.Security.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.Sockets.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.WebHeaderCollection.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.WebSockets.Client.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Net.WebSockets.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Numerics.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Numerics.Vectors.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ObjectModel.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Reflection.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Reflection.Emit.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Reflection.Emit.ILGeneration.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Reflection.Emit.Lightweight.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Reflection.Extensions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Reflection.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Resources.Reader.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Resources.ResourceManager.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Resources.Writer.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Extensions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Handles.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.InteropServices.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Numerics.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Serialization.Formatters.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Serialization.Json.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Serialization.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Runtime.Serialization.Xml.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Claims.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Cryptography.Csp.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.Principal.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Security.SecureString.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ServiceModel.Duplex.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ServiceModel.Http.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ServiceModel.NetTcp.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ServiceModel.Primitives.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ServiceModel.Security.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Text.Encoding.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Text.Encoding.Extensions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Text.RegularExpressions.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.Overlapped.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.Tasks.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.Tasks.Parallel.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.Thread.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.ThreadPool.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Threading.Timer.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.ValueTuple.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.ReaderWriter.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.XDocument.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.XmlDocument.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.XmlSerializer.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.XPath.dll
+C:\WorkingDevelopment\Repositories\Mirrorfear\ComfySoda_Unity2018.2.0b8\Temp\bin\Debug\System.Xml.XPath.XDocument.dll
