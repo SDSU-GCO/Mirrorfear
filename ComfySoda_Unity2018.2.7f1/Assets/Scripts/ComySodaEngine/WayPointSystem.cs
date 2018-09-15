@@ -22,6 +22,7 @@ namespace cs
         }
         #endregion
 
+        #region get endpoint(s)
         public WaypointBehavior getClosestWaypointToObject(GameObject originGameObject)
         {
             return getClosestWaypointToObject(originGameObject.transform);
@@ -85,12 +86,14 @@ namespace cs
 
             return new Tuple<WaypointBehavior, WaypointBehavior>(closestNodeToOrigin, closestNodeToTarget);
         }
+        #endregion
 
         public List<WaypointBehavior> findPath(WaypointBehavior startNode, WaypointBehavior targetNode)
         {
 
-            List<WaypointBehavior> unvisitedSet = new List<WaypointBehavior>();
 
+            #region clear nodes & initialize system
+            List<WaypointBehavior> unvisitedSet = new List<WaypointBehavior>();
             foreach (WaypointBehavior waypointBehavior in waypoints)
             {
                 waypointBehavior.nodeVisited = false;
@@ -98,17 +101,24 @@ namespace cs
                 waypointBehavior.infiniteDistance = true;
                 unvisitedSet.Add(waypointBehavior);
             }
-            WaypointBehavior currentNode = startNode;
 
             bool pathFound = false;
+            WaypointBehavior currentNode = startNode;
+            #endregion
+
+
             while (!pathFound && currentNode != null)
             {
+                #region visit current node
                 currentNode.nodeVisited = true;
                 unvisitedSet.Remove(currentNode);
+                #endregion
+
                 if (targetNode.nodeVisited)
                     pathFound = true;
                 else
                 {
+                    //I don't remember how this works and I think I broke it... oops...
                     for (int i = 0; i < waypoints.Count && !pathFound; i++)
                     {
                         WaypointBehavior waypoint = waypoints[i];
@@ -145,9 +155,11 @@ namespace cs
         public List<WaypointBehavior> tracePath(WaypointBehavior closestWaypoint, WaypointBehavior currentNode)
         {
             List<WaypointBehavior> pathOfWaypoints = new List<WaypointBehavior>();
+
+            //trace backwards through the network taking the shortest path to the start.
             while (closestWaypoint != currentNode)
             {
-                pathOfWaypoints.Add(currentNode);
+                pathOfWaypoints.Add(currentNode); //add node to a path list that can act as a network map
                 float? shortestDistance = null;
                 WaypointBehavior nextNode = null;
                 foreach (WaypointBehavior waypointBehavior in waypoints)
@@ -160,6 +172,8 @@ namespace cs
                 }
                 currentNode = nextNode;
             }
+
+            //returns a path throught the network
             return pathOfWaypoints;
         }
     }

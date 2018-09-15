@@ -23,7 +23,6 @@ namespace cs
             this.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
-
 }
 
 
