@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace cs
 {
@@ -111,80 +112,43 @@ namespace cs
 
                 List<WaypointBehavior> pathOfWaypoints = null;
                 WaypointBehavior startNode = null;
-                if (waypoints != null && waypoints.Count >= 2)
+                WaypointBehavior targetNode = null;
+                
+                if(lastTriggeredWaypoint!=null && currentEnemyState!=EnemyState.GO_TO_NEAREST_WAYPOINT)
                 {
-                    float? shortestDistanceToWaypoint = null;
-
-                    List<WaypointBehavior> unvisitedSet = new List<WaypointBehavior>();
-
-                    GameObject playerObject = PlayerLogic.playerObject.gameObject;
-                    float? shortestDistanceToPlayer = null;
-                    WaypointBehavior currentNode = null;
-                    WaypointBehavior targetNode = null;
-                    foreach (WaypointBehavior waypoint in waypoints)
-                    {
-
-                        WaypointBehavior waypointBehavior = waypoint;
-                        waypointBehavior.nodeVisited = false;
-                        waypointBehavior.distance = 0;
-                        waypointBehavior.infiniteDistance = true;
-                        unvisitedSet.Add(waypointBehavior);
-
-                        float distance = Vector3.Distance(playerObject.transform.position, waypoint.transform.position);
-                        if (shortestDistanceToPlayer == null || shortestDistanceToPlayer > distance)
-                        {
-                            shortestDistanceToPlayer = distance;
-                            targetNode = waypointBehavior;
-                        }
-
-
-                        if(lastTriggeredWaypoint!=null && currentEnemyState!=EnemyState.GO_TO_NEAREST_WAYPOINT)
-                        {
-                            startNode = lastTriggeredWaypoint;
-                        }
-                        else
-                        {
-                            distance = Vector3.Distance(transform.position, waypoint.transform.position);
-                            if (shortestDistanceToWaypoint == null || shortestDistanceToWaypoint > distance)
-                            {
-                                shortestDistanceToWaypoint = distance;
-                                startNode = waypointBehavior;
-                            }
-                        }
-                    }
-
-                    startNode.infiniteDistance = false;
-                    bool pathFound = false;
-
-                    currentNode = startNode;
-                    targetedWayPointSystem.findPath(ref pathFound, ref currentNode, ref unvisitedSet, targetNode);
-
-
-                    if (pathFound)
-                        pathOfWaypoints = targetedWayPointSystem.tracePath(startNode, currentNode);
+                    startNode = lastTriggeredWaypoint;
+                    targetNode = targetedWayPointSystem.getClosestWaypointToObject(PlayerLogic.playerLogic.transform);
+                }
+                else
+                {
+                    targetedWayPointSystem.getClosestEndpointsToObjects(transform, PlayerLogic.playerLogic.transform).Deconstruct(out startNode, out targetNode);
                 }
 
-                if (enemysCurrentMotivation <= 0)
-                {
-                    nextTargetedWaypoint = startNode;
-                    currentEnemyState = EnemyState.GO_TO_NEAREST_WAYPOINT;
 
-                    if (enemysCurrentMotivation <= -150)
-                    {
-                        enemysCurrentMotivation = enemyDefaultMotivation;
-                        currentEnemyState = EnemyState.PHASE_TO_WAYPOINT;
-                        if (lastTriggeredWaypoint != null)
-                        {
-                            nextTargetedWaypoint = lastTriggeredWaypoint;
-                            lastTriggeredWaypoint = null;
-                        }
-                        else
-                        {
-                            nextTargetedWaypoint = startNode;
-                        }
-                        GetComponent<Collider2D>().enabled = false;
-                    }
+                pathOfWaypoints = targetedWayPointSystem.findPath(startNode, targetNode);
                 }
+
+            if (enemysCurrentMotivation <= 0)
+            {
+                nextTargetedWaypoint = startNode;
+                currentEnemyState = EnemyState.GO_TO_NEAREST_WAYPOINT;
+
+                if (enemysCurrentMotivation <= -150)
+                {
+                    enemysCurrentMotivation = enemyDefaultMotivation;
+                    currentEnemyState = EnemyState.PHASE_TO_WAYPOINT;
+                    if (lastTriggeredWaypoint != null)
+                    {
+                        nextTargetedWaypoint = lastTriggeredWaypoint;
+                        lastTriggeredWaypoint = null;
+                    }
+                    else
+                    {
+                        nextTargetedWaypoint = startNode;
+                    }
+                    GetComponent<Collider2D>().enabled = false;
+                }
+            }
                 switch (currentEnemyState)
                 {
                     case EnemyState.GO_TO_NEAREST_WAYPOINT:

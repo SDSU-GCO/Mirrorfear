@@ -9,7 +9,7 @@ namespace cs
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerLogic : MonoBehaviour
     {
-        public static PlayerLogic playerObject = null;
+        public static PlayerLogic playerLogic = null;
         public float speed = 1.0f;
 
         private PlayerPersistantDataComponent playerPersistantDataComponent;

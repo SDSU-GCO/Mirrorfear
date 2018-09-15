@@ -1,27 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace cs
 {
 
     public class WayPointSystem : MonoBehaviour
     {
-        List<WaypointBehavior> waypoints = WaypointBehavior.waypoints;
-        
-        // Use this for initialization
-        void Start()
-        {
+        #region waypoint list
+        List<WaypointBehavior> waypoints = new List<WaypointBehavior>();
 
+        public void Add(WaypointBehavior waypointBehavior)
+        {
+            waypoints.Add(waypointBehavior);
         }
 
-        // Update is called once per frame
-        void Update()
+        public void Remove(WaypointBehavior waypointBehavior)
         {
-
+            waypoints.Remove(waypointBehavior);
         }
+        #endregion
 
         public WaypointBehavior getClosestWaypointToObject(GameObject originGameObject)
+        {
+            return getClosestWaypointToObject(originGameObject.transform);
+        }
+
+        public WaypointBehavior getClosestWaypointToObject(Transform originGameObject)
         {
             WaypointBehavior closestNode = null;
             if (waypoints != null && waypoints.Count >= 1)
@@ -31,7 +37,7 @@ namespace cs
 
                 foreach (WaypointBehavior waypoint in waypoints)
                 {
-                    distance = Vector3.Distance(originGameObject.transform.position, waypoint.transform.position);
+                    distance = Vector2.Distance(originGameObject.transform.position, waypoint.transform.position);
                     if (shortestDistanceToWaypoint == null || shortestDistanceToWaypoint > distance)
                     {
                         shortestDistanceToWaypoint = distance;
@@ -41,8 +47,12 @@ namespace cs
             }
             return closestNode;
         }
-        
-        public WaypointBehavior getClosestEndpointsToObjects(GameObject originGameObject, GameObject targetGameObject)
+
+        public Tuple<WaypointBehavior, WaypointBehavior> getClosestEndpointsToObjects(GameObject originGameObject, GameObject targetGameObject)
+        {
+            return getClosestEndpointsToObjects(originGameObject.transform, targetGameObject.transform);
+        }
+        public Tuple<WaypointBehavior, WaypointBehavior> getClosestEndpointsToObjects(Transform originGameObject, Transform targetGameObject)
         {
 
             WaypointBehavior closestNodeToOrigin = null;
@@ -56,14 +66,14 @@ namespace cs
                 foreach (WaypointBehavior waypoint in waypoints)
                 {
 
-                    distance = Vector3.Distance(originGameObject.transform.position, waypoint.transform.position);
+                    distance = Vector2.Distance(originGameObject.position, waypoint.transform.position);
                     if (shortestDistanceToWaypointFromOrigin == null || shortestDistanceToWaypointFromOrigin > distance)
                     {
                         shortestDistanceToWaypointFromOrigin = distance;
                         closestNodeToOrigin = waypoint;
                     }
 
-                    distance = Vector3.Distance(targetGameObject.transform.position, waypoint.transform.position);
+                    distance = Vector2.Distance(targetGameObject.position, waypoint.transform.position);
                     if (shortestDistanceToWaypointFromTarget == null || shortestDistanceToWaypointFromTarget > distance)
                     {
                         shortestDistanceToWaypointFromTarget = distance;
@@ -72,11 +82,25 @@ namespace cs
 
                 }
             }
-            return closestNodeToOrigin;
+
+            return new Tuple<WaypointBehavior, WaypointBehavior>(closestNodeToOrigin, closestNodeToTarget);
         }
 
-        public void findPath(ref bool pathFound, ref WaypointBehavior currentNode, ref List<WaypointBehavior> unvisitedSet, WaypointBehavior targetNode)
+        public List<WaypointBehavior> findPath(WaypointBehavior startNode, WaypointBehavior targetNode)
         {
+
+            List<WaypointBehavior> unvisitedSet = new List<WaypointBehavior>();
+
+            foreach (WaypointBehavior waypointBehavior in waypoints)
+            {
+                waypointBehavior.nodeVisited = false;
+                waypointBehavior.distance = 0;
+                waypointBehavior.infiniteDistance = true;
+                unvisitedSet.Add(waypointBehavior);
+            }
+            WaypointBehavior currentNode = startNode;
+
+            bool pathFound = false;
             while (!pathFound && currentNode != null)
             {
                 currentNode.nodeVisited = true;
@@ -85,13 +109,13 @@ namespace cs
                     pathFound = true;
                 else
                 {
-                    for (int i = 0; i < currentNode.waypointObjects.Count && !pathFound; i++)
+                    for (int i = 0; i < waypoints.Count && !pathFound; i++)
                     {
-                        GameObject waypoint = currentNode.waypointObjects[i];
-                        WaypointBehavior tempWaypointBehavior = waypoint.GetComponent<WaypointBehavior>();
-                        if (!tempWaypointBehavior.nodeVisited)
+                        WaypointBehavior waypoint = waypoints[i];
+                        WaypointBehavior tempWaypointBehavior = waypoint;
+                        if (tempWaypointBehavior.nodeVisited!=true)
                         {
-                            float tentativeDistance = Vector3.Distance(currentNode.transform.position, waypoint.transform.position);
+                            float tentativeDistance = Vector2.Distance(currentNode.transform.position, waypoint.transform.position);
                             if (tentativeDistance < tempWaypointBehavior.distance || tempWaypointBehavior.infiniteDistance)
                             {
                                 tempWaypointBehavior.infiniteDistance = false;
@@ -111,6 +135,11 @@ namespace cs
                     currentNode = nextNode;
                 }
             }
+
+            if (pathFound)
+                return tracePath(startNode, currentNode);
+            else
+                return null;
         }
 
         public List<WaypointBehavior> tracePath(WaypointBehavior closestWaypoint, WaypointBehavior currentNode)
@@ -121,13 +150,12 @@ namespace cs
                 pathOfWaypoints.Add(currentNode);
                 float? shortestDistance = null;
                 WaypointBehavior nextNode = null;
-                foreach (GameObject tempWayPointObject in currentNode.waypointObjects)
+                foreach (WaypointBehavior waypointBehavior in waypoints)
                 {
-                    WaypointBehavior tempWaypointBehavior = tempWayPointObject.GetComponent<WaypointBehavior>();
-                    if ((shortestDistance == null || (shortestDistance > tempWaypointBehavior.distance)) && !tempWaypointBehavior.infiniteDistance)
+                    if ((shortestDistance == null || (shortestDistance > waypointBehavior.distance)) && waypointBehavior.infiniteDistance==false)
                     {
-                        shortestDistance = tempWaypointBehavior.distance;
-                        nextNode = tempWaypointBehavior;
+                        shortestDistance = waypointBehavior.distance;
+                        nextNode = waypointBehavior;
                     }
                 }
                 currentNode = nextNode;
