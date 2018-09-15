@@ -23,7 +23,7 @@ namespace cs
         public EnemyState previousEnemyState = EnemyState.FADE_IN;
         public WaypointBehavior lastTriggeredWaypoint = null;
         public WaypointBehavior nextTargetedWaypoint = null;
-        List<WaypointBehavior> waypoints = WaypointBehavior.waypoints;
+        WayPointSystem targetedWayPointSystem = null;
         Rigidbody2D myRigidbody2D;
         Animator tempAnimator;
 
@@ -157,11 +157,11 @@ namespace cs
                     bool pathFound = false;
 
                     currentNode = startNode;
-                    findPath(ref pathFound, ref currentNode, ref unvisitedSet, targetNode);
+                    targetedWayPointSystem.findPath(ref pathFound, ref currentNode, ref unvisitedSet, targetNode);
 
 
                     if (pathFound)
-                        pathOfWaypoints = tracePath(startNode, currentNode);
+                        pathOfWaypoints = targetedWayPointSystem.tracePath(startNode, currentNode);
                 }
 
                 if (enemysCurrentMotivation <= 0)
@@ -316,66 +316,6 @@ namespace cs
             }
 
             return rtnVal;
-        }
-
-        void findPath(ref bool pathFound, ref WaypointBehavior currentNode, ref List<WaypointBehavior> unvisitedSet, WaypointBehavior targetNode)
-        {
-            while (!pathFound && currentNode != null)
-            {
-                currentNode.nodeVisited = true;
-                unvisitedSet.Remove(currentNode);
-                if (targetNode.nodeVisited)
-                    pathFound = true;
-                else
-                {
-                    for (int i = 0; i < currentNode.waypointObjects.Count && !pathFound; i++)
-                    {
-                        GameObject waypoint = currentNode.waypointObjects[i];
-                        WaypointBehavior tempWaypointBehavior = waypoint.GetComponent<WaypointBehavior>();
-                        if (!tempWaypointBehavior.nodeVisited)
-                        {
-                            float tentativeDistance = Vector3.Distance(currentNode.transform.position, waypoint.transform.position);
-                            if (tentativeDistance < tempWaypointBehavior.distance || tempWaypointBehavior.infiniteDistance)
-                            {
-                                tempWaypointBehavior.infiniteDistance = false;
-                                tempWaypointBehavior.distance = currentNode.distance + tentativeDistance;
-                            }
-                        }
-                    }
-
-                    WaypointBehavior nextNode = null;
-                    for (int j = 0; j < unvisitedSet.Count && !pathFound; j++)
-                    {
-                        if ((nextNode != null && unvisitedSet[j].distance < nextNode.distance && !unvisitedSet[j].infiniteDistance) || (nextNode == null && !unvisitedSet[j].infiniteDistance))
-                        {
-                            nextNode = unvisitedSet[j];
-                        }
-                    }
-                    currentNode = nextNode;
-                }
-            }
-        }
-
-        List<WaypointBehavior> tracePath(WaypointBehavior closestWaypoint, WaypointBehavior currentNode)
-        {
-            List<WaypointBehavior> pathOfWaypoints = new List<WaypointBehavior>();
-            while (closestWaypoint != currentNode)
-            {
-                pathOfWaypoints.Add(currentNode);
-                float? shortestDistance = null;
-                WaypointBehavior nextNode = null;
-                foreach (GameObject tempWayPointObject in currentNode.waypointObjects)
-                {
-                    WaypointBehavior tempWaypointBehavior = tempWayPointObject.GetComponent<WaypointBehavior>();
-                    if ((shortestDistance == null || (shortestDistance > tempWaypointBehavior.distance)) && !tempWaypointBehavior.infiniteDistance)
-                    {
-                        shortestDistance = tempWaypointBehavior.distance;
-                        nextNode = tempWaypointBehavior;
-                    }
-                }
-                currentNode = nextNode;
-            }
-            return pathOfWaypoints;
         }
     }
 
