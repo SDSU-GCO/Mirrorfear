@@ -8,6 +8,8 @@ namespace cs
 
     public class EnemyLogic : MonoBehaviour
     {
+        public WayPointSystem targetedWayPointSystem = null;
+        public GameObject prey = null;
         public static List<EnemyLogic> enemyLogicsInBossRange = new List<EnemyLogic>();
         public static List<EnemyLogic> enemyLogicsInMobRange = new List<EnemyLogic>();
         public static bool disableEnimies = false;
@@ -17,14 +19,13 @@ namespace cs
         public float enemySpeed = 4;
         public float enemyDemotivationRate = 10.0f;
         public float enemysCurrentMotivation = 100.0f;
-        private float enemyDefaultMotivation;
-        public GameObject raycastTarget = null;
-        public enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PLAYER, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS };
-        public EnemyState currentEnemyState = EnemyState.FADE_IN;
-        public EnemyState previousEnemyState = EnemyState.FADE_IN;
-        public WaypointBehavior lastTriggeredWaypoint = null;
-        public WaypointBehavior nextTargetedWaypoint = null;
-        WayPointSystem targetedWayPointSystem = null;
+        float enemyDefaultMotivation;
+        GameObject raycastTarget = null;
+        enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PREY, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS };
+        EnemyState currentEnemyState = EnemyState.FADE_IN;
+        EnemyState previousEnemyState = EnemyState.FADE_IN;
+        WaypointBehavior lastTriggeredWaypoint = null;
+        WaypointBehavior nextTargetedWaypoint = null;
         Rigidbody2D myRigidbody2D;
         Animator tempAnimator;
 
@@ -53,9 +54,9 @@ namespace cs
         // Update is called once per frame
         void Update()
         {
-            bool enemyHasLineOfSightOnPlayer = checkLineOfSightToPlayer();
+            bool enemyHasLineOfSightOnPrey = checkLineOfSightToPrey();
 
-            if (enemyHasLineOfSightOnPlayer)
+            if (enemyHasLineOfSightOnPrey)
             {
                 enemysCurrentMotivation = enemyDefaultMotivation;
             }
@@ -67,7 +68,7 @@ namespace cs
 
             if (!disableEnimies)
             {
-                if (enemyHasLineOfSightOnPlayer)
+                if (enemyHasLineOfSightOnPrey)
                 {
                     if (!enemyLogicsInBossRange.Contains(this))
                     {
@@ -78,7 +79,7 @@ namespace cs
                         enemyLogicsInMobRange.Add(this);
                     }
                 }
-                else if(Vector2.Distance(new Vector2(PlayerLogic.playerLogic.transform.position.x, PlayerLogic.playerLogic.transform.position.y), new Vector2(transform.position.x, transform.position.y-0.5f))<3.0f)
+                else if(Vector2.Distance(new Vector2(prey.transform.position.x, prey.transform.position.y), new Vector2(transform.position.x, transform.position.y-0.25f))<3.0f)
                 {
                     if (enemyLogicsInBossRange.Contains(this))
                     {
@@ -117,11 +118,11 @@ namespace cs
                 if (lastTriggeredWaypoint != null && currentEnemyState != EnemyState.GO_TO_NEAREST_WAYPOINT)
                 {
                     startNode = lastTriggeredWaypoint;
-                    targetNode = targetedWayPointSystem.getClosestWaypointToObject(PlayerLogic.playerLogic.transform);
+                    targetNode = targetedWayPointSystem.getClosestWaypointToObject(prey.transform);
                 }
                 else
                 {
-                    targetedWayPointSystem.getClosestEndpointsToObjects(transform, PlayerLogic.playerLogic.transform).Deconstruct(out startNode, out targetNode);
+                    targetedWayPointSystem.getClosestEndpointsToObjects(transform, prey.transform).Deconstruct(out startNode, out targetNode);
                 }
 
 
@@ -154,9 +155,9 @@ namespace cs
                 switch (currentEnemyState)
                 {
                     case EnemyState.GO_TO_NEAREST_WAYPOINT:
-                        if (enemyHasLineOfSightOnPlayer)
+                        if (enemyHasLineOfSightOnPrey)
                         {
-                            currentEnemyState = EnemyState.BEE_LINE_FOR_PLAYER;
+                            currentEnemyState = EnemyState.BEE_LINE_FOR_PREY;
                         }
                         nextTargetedWaypoint = startNode;
 
@@ -166,23 +167,21 @@ namespace cs
                             enemysCurrentMotivation = enemyDefaultMotivation;
                         }
 
-                        if (!enemyHasLineOfSightOnPlayer && myRigidbody2D.velocity.magnitude <= 0.2)
+                        if (!enemyHasLineOfSightOnPrey && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
 
                         Vector2 directionOfNearestTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.25f);
                         myRigidbody2D.velocity = directionOfNearestTargetWaypoint.normalized * enemySpeed;
                         tempAnimator.SetFloat("Horizontal Axis", directionOfNearestTargetWaypoint.normalized.x);
                         tempAnimator.SetFloat("Vertical Axis", directionOfNearestTargetWaypoint.normalized.y);
-
-
                         break;
-                    case EnemyState.BEE_LINE_FOR_PLAYER:
-                        Vector2 directionOfPlayer = new Vector2(PlayerLogic.playerLogic.transform.position.x, PlayerLogic.playerLogic.transform.position.y -0.25f) - new Vector2(transform.position.x, transform.position.y-0.25f);
-                        if (!enemyHasLineOfSightOnPlayer && myRigidbody2D.velocity.magnitude <= 0.2)
+                    case EnemyState.BEE_LINE_FOR_PREY:
+                        Vector2 directionOfPrey = new Vector2(prey.transform.position.x, prey.transform.position.y -0.25f) - new Vector2(transform.position.x, transform.position.y-0.25f);
+                        if (!enemyHasLineOfSightOnPrey && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
-                        myRigidbody2D.velocity = directionOfPlayer.normalized * enemySpeed;
-                        tempAnimator.SetFloat("Horizontal Axis", directionOfPlayer.normalized.x);
-                        tempAnimator.SetFloat("Vertical Axis", directionOfPlayer.normalized.y);
+                        myRigidbody2D.velocity = directionOfPrey.normalized * enemySpeed;
+                        tempAnimator.SetFloat("Horizontal Axis", directionOfPrey.normalized.x);
+                        tempAnimator.SetFloat("Vertical Axis", directionOfPrey.normalized.y);
                         break;
                     case EnemyState.PHASE_TO_WAYPOINT:
                         if(nextTargetedWaypoint==null)
@@ -203,7 +202,7 @@ namespace cs
                         }
                         break;
                     case EnemyState.FOLLOW_WAYPOINTS:
-                        if (!enemyHasLineOfSightOnPlayer && myRigidbody2D.velocity.magnitude <= 0.2)
+                        if (!enemyHasLineOfSightOnPrey && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
 
                         Vector2 directionOfPathTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.25f);
@@ -219,9 +218,9 @@ namespace cs
                         {
                             nextTargetedWaypoint = pathOfWaypoints[pathOfWaypoints.Count - 1];
                         }
-                        else if(enemyHasLineOfSightOnPlayer)
+                        else if(enemyHasLineOfSightOnPrey)
                         {
-                            currentEnemyState = EnemyState.BEE_LINE_FOR_PLAYER;
+                            currentEnemyState = EnemyState.BEE_LINE_FOR_PREY;
                         }
                         if(nextTargetedWaypoint == lastTriggeredWaypoint)
                         {
@@ -250,16 +249,16 @@ namespace cs
             }
         }
 
-        bool checkLineOfSightToPlayer()
+        bool checkLineOfSightToPrey()
         {
             GameObject enemyObject = gameObject;//the game object enemy logic is atatched to
 
-            bool rayCastHitPlayerObjectDirectlyViaLineOfSight = false;
+            bool rayCastHitPreyObjectDirectlyViaLineOfSight = false;
             bool rtnVal = false;
 
-            //raycast from this enemy to the player object
+            //raycast from this enemy to the prey object
             //set the raycast boolean
-            // Ray enemyToPlayer = new Ray ()
+            // Ray enemyToPrey = new Ray ()
 
             int Enemy = LayerMask.NameToLayer("Enemy");
             int layerMask = (1 << Enemy);
@@ -268,14 +267,14 @@ namespace cs
 
             if(raycast.collider!=null)
             {
-                if (raycast.collider.gameObject.tag == "Player")
+                if (raycast.collider.gameObject.tag == prey.tag)
                 {
-                    rayCastHitPlayerObjectDirectlyViaLineOfSight = true;
+                    rayCastHitPreyObjectDirectlyViaLineOfSight = true;
                 }
                 raycastTarget = raycast.collider.gameObject;
             }
 
-            if(rayCastHitPlayerObjectDirectlyViaLineOfSight)
+            if(rayCastHitPreyObjectDirectlyViaLineOfSight)
             {
                 rtnVal = true;
             }

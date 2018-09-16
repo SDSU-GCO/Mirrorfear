@@ -1617,16 +1617,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08c373a160d75f4a8899ea8340d51ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetedWayPointSystem: {fileID: 903658162}
+  prey: {fileID: 2080311223}
   fadeSpeed: 1
   initialOpacity: 0.5
   enemySpeed: 2
   enemyDemotivationRate: 10
   enemysCurrentMotivation: 30
-  raycastTarget: {fileID: 0}
-  currentEnemyState: 3
-  previousEnemyState: 3
-  lastTriggeredWaypoint: {fileID: 0}
-  nextTargetedWaypoint: {fileID: 0}
 --- !u!1 &1110239938
 GameObject:
   m_ObjectHideFlags: 0
