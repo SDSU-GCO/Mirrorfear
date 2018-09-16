@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 namespace cs
 {
@@ -22,7 +23,7 @@ namespace cs
         }
         #endregion
 
-        #region get endpoint(s)
+        #region get endpoint(s) function(s)
         public WaypointBehavior getClosestWaypointToObject(GameObject originGameObject)
         {
             return getClosestWaypointToObject(originGameObject.transform);
@@ -88,7 +89,7 @@ namespace cs
         }
         #endregion
 
-        public List<WaypointBehavior> findPath(WaypointBehavior startNode, WaypointBehavior targetNode)
+        public List<WaypointBehavior> tracePath(WaypointBehavior startNode, WaypointBehavior targetNode)
         {
 
 
@@ -114,55 +115,63 @@ namespace cs
                 unvisitedSet.Remove(currentNode);
                 #endregion
 
-                if (targetNode.nodeVisited)
+                if (targetNode.nodeVisited == true)
                     pathFound = true;
                 else
                 {
-                    //I don't remember how this works and I think I broke it... oops...
-                    for (int i = 0; i < waypoints.Count && !pathFound; i++)
-                    {
-                        WaypointBehavior waypoint = waypoints[i];
-                        WaypointBehavior tempWaypointBehavior = waypoint;
-                        if (tempWaypointBehavior.nodeVisited!=true)
-                        {
-                            float tentativeDistance = Vector2.Distance(currentNode.transform.position, waypoint.transform.position);
-                            if (tentativeDistance < tempWaypointBehavior.distance || tempWaypointBehavior.infiniteDistance)
-                            {
-                                tempWaypointBehavior.infiniteDistance = false;
-                                tempWaypointBehavior.distance = currentNode.distance + tentativeDistance;
-                            }
-                        }
-                    }
+                    CalculateDistanceAndTentativedistance(unvisitedSet, currentNode);
 
-                    WaypointBehavior nextNode = null;
-                    for (int j = 0; j < unvisitedSet.Count && !pathFound; j++)
-                    {
-                        if ((nextNode != null && unvisitedSet[j].distance < nextNode.distance && !unvisitedSet[j].infiniteDistance) || (nextNode == null && !unvisitedSet[j].infiniteDistance))
-                        {
-                            nextNode = unvisitedSet[j];
-                        }
-                    }
-                    currentNode = nextNode;
+                    currentNode = GoToClosestAdjacentNode(unvisitedSet);
                 }
             }
 
+            #region return path
             if (pathFound)
-                return tracePath(startNode, currentNode);
+                return getPath(startNode, currentNode);
             else
                 return null;
+            #endregion
         }
 
-        public List<WaypointBehavior> tracePath(WaypointBehavior closestWaypoint, WaypointBehavior currentNode)
+        private static void CalculateDistanceAndTentativedistance(List<WaypointBehavior> unvisitedSet, WaypointBehavior currentNode)
+        {
+            foreach (WaypointBehavior waypoint in unvisitedSet)
+            {
+                float tentativeDistance = Vector2.Distance(currentNode.transform.position, waypoint.transform.position);
+                if (tentativeDistance < waypoint.distance || waypoint.infiniteDistance)
+                {
+                    waypoint.infiniteDistance = false;
+                    waypoint.distance = currentNode.distance + tentativeDistance;
+                }
+            }
+        }
+
+        private static WaypointBehavior GoToClosestAdjacentNode(List<WaypointBehavior> unvisitedSet)
+        {
+            WaypointBehavior nextNode = null;
+            for (int j = 0; j < unvisitedSet.Count; j++)
+            {
+                if ((nextNode != null && unvisitedSet[j].distance < nextNode.distance && unvisitedSet[j].infiniteDistance == false) || (nextNode == null && unvisitedSet[j].infiniteDistance == false))
+                {
+                    nextNode = unvisitedSet[j];
+                }
+            }
+            return nextNode;
+        }
+
+        public List<WaypointBehavior> getPath(WaypointBehavior closestWaypoint, WaypointBehavior currentNode)
         {
             List<WaypointBehavior> pathOfWaypoints = new List<WaypointBehavior>();
+            float? shortestDistance = null;
+            WaypointBehavior nextNode = null;
 
             //trace backwards through the network taking the shortest path to the start.
             while (closestWaypoint != currentNode)
             {
                 pathOfWaypoints.Add(currentNode); //add node to a path list that can act as a network map
-                float? shortestDistance = null;
-                WaypointBehavior nextNode = null;
-                foreach (WaypointBehavior waypointBehavior in waypoints)
+                shortestDistance = null;
+                nextNode = null;
+                foreach (WaypointBehavior waypointBehavior in currentNode.GetWaypointBehaviors())
                 {
                     if ((shortestDistance == null || (shortestDistance > waypointBehavior.distance)) && waypointBehavior.infiniteDistance==false)
                     {

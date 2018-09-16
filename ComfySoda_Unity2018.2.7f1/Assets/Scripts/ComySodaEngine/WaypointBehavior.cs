@@ -11,6 +11,16 @@ namespace cs
         public bool infiniteDistance;
         public string WaypointName = "";
         
+        public List<WaypointBehavior> GetWaypointBehaviors()
+        {
+            List<WaypointBehavior> temp = new List<WaypointBehavior>();
+            foreach(GameObject go in waypointObjects)
+            {
+                temp.Add(go.GetComponent<WaypointBehavior>());
+            }
+            return temp;
+        }
+
         private void Awake()
         {
             GetComponentInParent<WayPointSystem>().Add(this);

@@ -125,7 +125,7 @@ namespace cs
                 }
 
 
-                pathOfWaypoints = targetedWayPointSystem.findPath(startNode, targetNode);
+                pathOfWaypoints = targetedWayPointSystem.tracePath(startNode, targetNode);
 
 
                 if (enemysCurrentMotivation <= 0)
