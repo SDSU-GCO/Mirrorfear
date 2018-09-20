@@ -14,7 +14,7 @@ namespace cs
             if(DialogueManager.DialogueManagerOpen)
             {
                 EnemyLogic.disableEnimies = true;
-                PlayerLogic.playerObject.enableMovement = false;
+                PlayerLogic.playerLogic.enableMovement = false;
             }
 
 
@@ -42,11 +42,11 @@ namespace cs
 
         public static void GameOverCheck(Collision2D enemy)
         {
-            if (PlayerLogic.playerObject != null && enemy.gameObject == PlayerLogic.playerObject.gameObject)
+            if (PlayerLogic.playerLogic != null && enemy.gameObject == PlayerLogic.playerLogic.gameObject)
             {
                 MusicManager.musicState = MusicState.main;
                 EnemyLogic.disableEnimies = true;
-                PlayerLogic.playerObject.enableMovement = false;
+                PlayerLogic.playerLogic.enableMovement = false;
                 GameOverController.StartGameOver();
             }
 
