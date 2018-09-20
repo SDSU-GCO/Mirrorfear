@@ -23,8 +23,8 @@ namespace cs
         enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PREY, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS };
         EnemyState currentEnemyState = EnemyState.FADE_IN;
         EnemyState previousEnemyState = EnemyState.FADE_IN;
-        WaypointBehavior lastTriggeredWaypoint = null;
-        WaypointBehavior nextTargetedWaypoint = null;
+        Waypoint lastTriggeredWaypoint = null;
+        Waypoint nextTargetedWaypoint = null;
         Rigidbody2D myRigidbody2D;
         Animator tempAnimator;
 
@@ -39,7 +39,7 @@ namespace cs
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            WaypointBehavior tempWaypoint = collision.gameObject.GetComponent<WaypointBehavior>();
+            Waypoint tempWaypoint = collision.gameObject.GetComponent<Waypoint>();
             if(tempWaypoint!=null)
             {
                 lastTriggeredWaypoint = tempWaypoint;
@@ -118,9 +118,9 @@ namespace cs
             else
             {
 
-                List<WaypointBehavior> pathOfWaypoints = null;
-                WaypointBehavior startNode = null;
-                WaypointBehavior targetNode = null;
+                List<Waypoint> pathOfWaypoints = null;
+                Waypoint startNode = null;
+                Waypoint targetNode = null;
 
                 if (lastTriggeredWaypoint != null && currentEnemyState != EnemyState.GO_TO_NEAREST_WAYPOINT)
                 {

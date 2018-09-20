@@ -4,31 +4,34 @@ using UnityEngine;
 
 namespace cs
 {
-    public class WaypointBehavior : MonoBehaviour {
+    public class Waypoint : MonoBehaviour {
         public List<GameObject> waypointObjects = new List<GameObject>();
         public bool nodeVisited=false;
         public float? distance;
         public string WaypointName = "";
-        
-        public List<WaypointBehavior> GetWaypointBehaviors()
+        WayPointSystem wayPointSystem = null;
+
+
+        public List<Waypoint> GetWaypointBehaviors()
         {
-            List<WaypointBehavior> temp = new List<WaypointBehavior>();
+            List<Waypoint> temp = new List<Waypoint>();
             foreach(GameObject go in waypointObjects)
             {
-                temp.Add(go.GetComponent<WaypointBehavior>());
+                temp.Add(go.GetComponent<Waypoint>());
             }
             return temp;
         }
 
-        private void Awake()
+        private void OnEnable()
         {
-            GetComponentInParent<WayPointSystem>().Add(this);
+            wayPointSystem = GetComponentInParent<WayPointSystem>();
+            wayPointSystem.Add(this);
             this.GetComponent<SpriteRenderer>().enabled = false;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
-            GetComponentInParent<WayPointSystem>().Remove(this);
+            wayPointSystem.Remove(this);
             this.GetComponent<SpriteRenderer>().enabled = true;
         }
     }

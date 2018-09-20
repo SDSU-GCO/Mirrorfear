@@ -10,34 +10,34 @@ namespace cs
     public class WayPointSystem : MonoBehaviour
     {
         #region waypoint list
-        List<WaypointBehavior> waypoints = new List<WaypointBehavior>();
+        List<Waypoint> waypoints = new List<Waypoint>();
 
-        public void Add(WaypointBehavior waypointBehavior)
+        public void Add(Waypoint waypointBehavior)
         {
             waypoints.Add(waypointBehavior);
         }
 
-        public void Remove(WaypointBehavior waypointBehavior)
+        public void Remove(Waypoint waypointBehavior)
         {
             waypoints.Remove(waypointBehavior);
         }
         #endregion
 
         #region get endpoint(s) function(s)
-        public WaypointBehavior getClosestWaypointToObject(GameObject originGameObject)
+        public Waypoint getClosestWaypointToObject(GameObject originGameObject)
         {
             return getClosestWaypointToObject(originGameObject.transform);
         }
 
-        public WaypointBehavior getClosestWaypointToObject(Transform originGameObject)
+        public Waypoint getClosestWaypointToObject(Transform originGameObject)
         {
-            WaypointBehavior closestNode = null;
+            Waypoint closestNode = null;
             if (waypoints != null && waypoints.Count >= 1)
             {
                 float? shortestDistanceToWaypoint = null;
                 float? distance = null;
 
-                foreach (WaypointBehavior waypoint in waypoints)
+                foreach (Waypoint waypoint in waypoints)
                 {
                     distance = Vector2.Distance(originGameObject.transform.position, waypoint.transform.position);
                     if (shortestDistanceToWaypoint == null || shortestDistanceToWaypoint > distance)
@@ -50,22 +50,22 @@ namespace cs
             return closestNode;
         }
 
-        public Tuple<WaypointBehavior, WaypointBehavior> getClosestEndpointsToObjects(GameObject originGameObject, GameObject targetGameObject)
+        public Tuple<Waypoint, Waypoint> getClosestEndpointsToObjects(GameObject originGameObject, GameObject targetGameObject)
         {
             return getClosestEndpointsToObjects(originGameObject.transform, targetGameObject.transform);
         }
-        public Tuple<WaypointBehavior, WaypointBehavior> getClosestEndpointsToObjects(Transform originGameObject, Transform targetGameObject)
+        public Tuple<Waypoint, Waypoint> getClosestEndpointsToObjects(Transform originGameObject, Transform targetGameObject)
         {
 
-            WaypointBehavior closestNodeToOrigin = null;
-            WaypointBehavior closestNodeToTarget = null;
+            Waypoint closestNodeToOrigin = null;
+            Waypoint closestNodeToTarget = null;
             if (originGameObject!=null && targetGameObject!= null && waypoints != null && waypoints.Count >= 1)
             {
                 float? shortestDistanceToWaypointFromOrigin = null;
                 float? shortestDistanceToWaypointFromTarget = null;
                 float? distance = null;
 
-                foreach (WaypointBehavior waypoint in waypoints)
+                foreach (Waypoint waypoint in waypoints)
                 {
 
                     distance = Vector2.Distance(originGameObject.position, waypoint.transform.position);
@@ -85,15 +85,15 @@ namespace cs
                 }
             }
 
-            return new Tuple<WaypointBehavior, WaypointBehavior>(closestNodeToOrigin, closestNodeToTarget);
+            return new Tuple<Waypoint, Waypoint>(closestNodeToOrigin, closestNodeToTarget);
         }
         #endregion
 
-        public List<WaypointBehavior> tracePath(WaypointBehavior startNode, WaypointBehavior targetNode)
+        public List<Waypoint> tracePath(Waypoint startNode, Waypoint targetNode)
         {
             #region clear nodes & initialize system
-            List<WaypointBehavior> unvisitedSet = new List<WaypointBehavior>();
-            foreach (WaypointBehavior waypointBehavior in waypoints)
+            List<Waypoint> unvisitedSet = new List<Waypoint>();
+            foreach (Waypoint waypointBehavior in waypoints)
             {
                 waypointBehavior.nodeVisited = false;
                 waypointBehavior.distance = null;
@@ -101,7 +101,7 @@ namespace cs
             }
 
             bool pathFound = false;
-            WaypointBehavior currentNode = startNode;
+            Waypoint currentNode = startNode;
             #endregion
 
             if(startNode!=null && targetNode!=null)
@@ -117,17 +117,17 @@ namespace cs
                         pathFound = true;
                     else
                     {
-                        List<WaypointBehavior> adjacentSet = currentNode.GetWaypointBehaviors();
-                        CalculateDistanceAndTentativedistance(adjacentSet, currentNode);
+                        List<Waypoint> adjacentSet = currentNode.GetWaypointBehaviors();
+                        CalculateDistanceAndTentativedistanceOfAdjacentNodes(adjacentSet, currentNode);
 
-                        currentNode = GoToClosestAdjacentNode(adjacentSet);
+                        currentNode = GoToClosestUnvisitedNode(unvisitedSet);
                     }
                 }
             }
             
 
             #region return path
-            List<WaypointBehavior> pathOfWaypoints = null;
+            List<Waypoint> pathOfWaypoints = null;
             if (pathFound)
                 pathOfWaypoints = getPath(startNode, currentNode);
 
@@ -135,11 +135,11 @@ namespace cs
             #endregion
         }
 
-        private static void CalculateDistanceAndTentativedistance(List<WaypointBehavior> adjacentSet, WaypointBehavior currentNode)
+        private static void CalculateDistanceAndTentativedistanceOfAdjacentNodes(List<Waypoint> adjacentSet, Waypoint currentNode)
         {
             if(currentNode.distance==null)
                 currentNode.distance=0;
-            foreach (WaypointBehavior waypoint in adjacentSet)
+            foreach (Waypoint waypoint in adjacentSet)
             {
                 float? tentativeDistance = Vector2.Distance(currentNode.transform.position, waypoint.transform.position) + currentNode.distance;
                 if (waypoint.distance==null || tentativeDistance < waypoint.distance)
@@ -149,25 +149,28 @@ namespace cs
             }
         }
 
-        private static WaypointBehavior GoToClosestAdjacentNode(List<WaypointBehavior> adjacentSet)
+        private static Waypoint GoToClosestUnvisitedNode(List<Waypoint> unvisitedSet)
         {
-            WaypointBehavior nextNode = null;
-            foreach (WaypointBehavior adjacentNode in adjacentSet)
+            Waypoint nextNode = null;
+            foreach (Waypoint unvisitedNode in unvisitedSet)
             {
-                if ((nextNode != null && adjacentNode.distance!=null && adjacentNode.distance < nextNode.distance ) || (nextNode == null && adjacentNode.distance != null))
+                if (unvisitedNode.nodeVisited!=true && ((nextNode != null && unvisitedNode.distance!=null && unvisitedNode.distance < nextNode.distance ) || (nextNode == null && unvisitedNode.distance != null)))
                 {
-                    nextNode = adjacentNode;
+                    nextNode = unvisitedNode;
                 }
             }
+
+
+
             return nextNode;
         }
 
-        public List<WaypointBehavior> getPath(WaypointBehavior startNode, WaypointBehavior lastNodeTraversed)
+        public List<Waypoint> getPath(Waypoint startNode, Waypoint lastNodeTraversed)
         {
-            WaypointBehavior currentNode = lastNodeTraversed;
-            List<WaypointBehavior> pathOfWaypoints = new List<WaypointBehavior>();
+            Waypoint currentNode = lastNodeTraversed;
+            List<Waypoint> pathOfWaypoints = new List<Waypoint>();
             float? shortestDistance = null;
-            WaypointBehavior nextNode = null;
+            Waypoint nextNode = null;
 
             //trace backwards through the network taking the shortest path to the start.
             while (startNode != currentNode && nextNode != null)
@@ -175,7 +178,7 @@ namespace cs
                 pathOfWaypoints.Add(currentNode); //add node to a path list that can act as a network map
                 shortestDistance = null;
                 nextNode = null;
-                foreach (WaypointBehavior waypointBehavior in currentNode.GetWaypointBehaviors())
+                foreach (Waypoint waypointBehavior in currentNode.GetWaypointBehaviors())
                 {
                     if ((shortestDistance == null || (shortestDistance > waypointBehavior.distance)) && waypointBehavior.distance!=null)
                     {
