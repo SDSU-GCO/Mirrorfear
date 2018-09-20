@@ -9,7 +9,7 @@ namespace cs
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerLogic : MonoBehaviour
     {
-        public static PlayerLogic playerObject = null;
+        public static PlayerLogic playerLogic = null;
         public float speed = 1.0f;
 
         private PlayerPersistantDataComponent playerPersistantDataComponent;
@@ -34,8 +34,8 @@ namespace cs
         // Use this for initialization
         private void Awake()
         {
-            Debug.Assert(playerObject == null, "Error: There is more than one player in the scene, is this intentional?");
-            playerObject = this;
+            Debug.Assert(playerLogic == null, "Error: There is more than one player in the scene, is this intentional?");
+            playerLogic = this;
             enableMovement = true;
         }
 
@@ -54,9 +54,9 @@ namespace cs
 
         private void OnDestroy()
         {
-            if (playerObject == this)
+            if (playerLogic == this)
             {
-                playerObject = null;
+                playerLogic = null;
             }
             else
             {

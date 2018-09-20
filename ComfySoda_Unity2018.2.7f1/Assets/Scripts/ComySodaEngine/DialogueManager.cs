@@ -142,7 +142,7 @@ namespace cs
             animator.SetBool("IsOpen", false);
             DialogueManagerOpen = false;
             EnemyLogic.disableEnimies = false;
-            PlayerLogic.playerObject.enableMovement = true;
+            PlayerLogic.playerLogic.enableMovement = true;
             actionFunctions.Clear();
         }
 
