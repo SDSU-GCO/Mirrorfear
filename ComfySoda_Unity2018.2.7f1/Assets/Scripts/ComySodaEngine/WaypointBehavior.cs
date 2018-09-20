@@ -7,8 +7,7 @@ namespace cs
     public class WaypointBehavior : MonoBehaviour {
         public List<GameObject> waypointObjects = new List<GameObject>();
         public bool nodeVisited=false;
-        public float distance;
-        public bool infiniteDistance;
+        public float? distance;
         public string WaypointName = "";
         
         public List<WaypointBehavior> GetWaypointBehaviors()
