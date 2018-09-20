@@ -20,7 +20,6 @@ namespace cs
         public float enemyDemotivationRate = 10.0f;
         public float enemysCurrentMotivation = 100.0f;
         float enemyDefaultMotivation;
-        GameObject raycastTarget = null;
         enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PREY, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS };
         EnemyState currentEnemyState = EnemyState.FADE_IN;
         EnemyState previousEnemyState = EnemyState.FADE_IN;
@@ -282,7 +281,6 @@ namespace cs
                 {
                     rayCastHitPreyObjectDirectlyViaLineOfSight = true;
                 }
-                raycastTarget = raycast.collider.gameObject;
             }
 
             if(rayCastHitPreyObjectDirectlyViaLineOfSight)
