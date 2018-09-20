@@ -137,9 +137,11 @@ namespace cs
 
         private static void CalculateDistanceAndTentativedistance(List<WaypointBehavior> adjacentSet, WaypointBehavior currentNode)
         {
+            if(currentNode.distance==null)
+                currentNode.distance=0;
             foreach (WaypointBehavior waypoint in adjacentSet)
             {
-                float tentativeDistance = Vector2.Distance(currentNode.transform.position, waypoint.transform.position) + currentNode.distance;
+                float? tentativeDistance = Vector2.Distance(currentNode.transform.position, waypoint.transform.position) + currentNode.distance;
                 if (waypoint.distance==null || tentativeDistance < waypoint.distance)
                 {
                     waypoint.distance = tentativeDistance;

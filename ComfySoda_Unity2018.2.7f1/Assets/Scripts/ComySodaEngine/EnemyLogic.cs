@@ -51,8 +51,16 @@ namespace cs
             }
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
         void Update()
+        {
+            UpdateTest();
+        }
+
+        // Update is called once per frame
+        void UpdateTest()
         {
             bool enemyHasLineOfSightOnPrey = checkLineOfSightToPrey();
 
@@ -123,6 +131,7 @@ namespace cs
                 else
                 {
                     targetedWayPointSystem.getClosestEndpointsToObjects(transform, prey.transform).Deconstruct(out startNode, out targetNode);
+                    lastTriggeredWaypoint = startNode;
                 }
 
 
@@ -209,6 +218,8 @@ namespace cs
                         myRigidbody2D.velocity = directionOfPathTargetWaypoint.normalized * enemySpeed;
                         tempAnimator.SetFloat("Horizontal Axis", directionOfPathTargetWaypoint.normalized.x);
                         tempAnimator.SetFloat("Vertical Axis", directionOfPathTargetWaypoint.normalized.y);
+
+                        Debug.Assert(pathOfWaypoints!=null, "Error, No waypoint path found!");
 
                         if (pathOfWaypoints.Count > 1 && lastTriggeredWaypoint == pathOfWaypoints[pathOfWaypoints.Count - 1])
                         {
