@@ -173,7 +173,7 @@ namespace cs
             Waypoint nextNode = null;
 
             //trace backwards through the network taking the shortest path to the start.
-            while (startNode != currentNode && nextNode != null)
+            while (currentNode != null && startNode != currentNode)
             {
                 pathOfWaypoints.Add(currentNode); //add node to a path list that can act as a network map
                 shortestDistance = null;

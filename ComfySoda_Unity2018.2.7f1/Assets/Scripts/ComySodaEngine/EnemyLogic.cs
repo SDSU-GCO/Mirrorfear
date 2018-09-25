@@ -21,21 +21,33 @@ namespace cs
         public float enemysCurrentMotivation = 100.0f;
         float enemyDefaultMotivation;
         enum EnemyState { GO_TO_NEAREST_WAYPOINT, BEE_LINE_FOR_PREY, PHASE_TO_WAYPOINT, FADE_IN, FOLLOW_WAYPOINTS };
+        [SerializeField]
         EnemyState currentEnemyState = EnemyState.FADE_IN;
+        [SerializeField]
         EnemyState previousEnemyState = EnemyState.FADE_IN;
+        [SerializeField]
         Waypoint lastTriggeredWaypoint = null;
+        [SerializeField]
         Waypoint nextTargetedWaypoint = null;
         Rigidbody2D myRigidbody2D;
         Animator tempAnimator;
 
+        public static List<EnemyLogic> enemyList = new List<EnemyLogic>();
+
         private void OnEnable()
         {
+            enemyList.Add(this);
             spriteRenderer = GetComponent<SpriteRenderer>();
             enemyDefaultMotivation = enemysCurrentMotivation;
             myRigidbody2D = GetComponent<Rigidbody2D>();
             tempAnimator = GetComponent<Animator>();
         }
-        
+
+        private void OnDisable()
+        {
+            enemyList.Remove(this);
+        }
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -49,17 +61,10 @@ namespace cs
                 }
             }
         }
-
-        /// <summary>
-        /// Update is called every frame, if the MonoBehaviour is enabled.
-        /// </summary>
-        void Update()
-        {
-            UpdateTest();
-        }
+        
 
         // Update is called once per frame
-        void UpdateTest()
+        void Update()
         {
             bool enemyHasLineOfSightOnPrey = checkLineOfSightToPrey();
 
@@ -273,7 +278,7 @@ namespace cs
             int Enemy = LayerMask.NameToLayer("Enemy");
             int layerMask = (1 << Enemy);
 
-            RaycastHit2D raycast = Physics2D.Raycast(new Vector2(enemyObject.transform.position.x, enemyObject.transform.position.y-0.5f), new Vector2(PlayerLogic.playerLogic.transform.position.x, PlayerLogic.playerLogic.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.5f), Mathf.Infinity, ~layerMask);
+            RaycastHit2D raycast = Physics2D.Raycast(new Vector2(enemyObject.transform.position.x, enemyObject.transform.position.y-0.25f), new Vector2(PlayerLogic.playerLogic.transform.position.x, PlayerLogic.playerLogic.transform.position.y-0.25f) - new Vector2(transform.position.x, transform.position.y-0.25f), Mathf.Infinity, ~layerMask);
 
             if(raycast.collider!=null)
             {
