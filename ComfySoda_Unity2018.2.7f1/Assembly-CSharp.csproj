@@ -64,10 +64,11 @@
     <Compile Include="Assets\Scripts\ComySodaEngine\DialogInstructionSet.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\DialogSystemBackend.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\ComySodaEngine\EnemyController.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\EnemyLogic.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\GameOverController.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\InputParameterInterface.cs" />
-    <Compile Include="Assets\Scripts\ComySodaEngine\WaypointBehavior.cs" />
+    <Compile Include="Assets\Scripts\ComySodaEngine\Waypoint.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\WayPointSystem.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MessageBoxTagger.cs" />

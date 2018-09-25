@@ -1624,6 +1624,10 @@ MonoBehaviour:
   enemySpeed: 2
   enemyDemotivationRate: 10
   enemysCurrentMotivation: 30
+  currentEnemyState: 3
+  previousEnemyState: 3
+  lastTriggeredWaypoint: {fileID: 0}
+  nextTargetedWaypoint: {fileID: 0}
 --- !u!1 &1110239938
 GameObject:
   m_ObjectHideFlags: 0
@@ -15627,6 +15631,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutScene: Introduction
+--- !u!114 &2009544175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009544172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe087621e6b001499f62cfe00f82e6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CLOSE: 4
+  MID: 8
+  enemyRange: 2
+  enemyList: []
 --- !u!114 &2009544177
 MonoBehaviour:
   m_ObjectHideFlags: 0

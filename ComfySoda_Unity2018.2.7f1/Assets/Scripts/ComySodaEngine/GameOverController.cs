@@ -7,7 +7,7 @@ namespace cs
 {
     public class GameOverController : MonoBehaviour
     {
-        public static bool gameIsOver = true;
+        public static bool gameIsOver = false;
         [SerializeField]
         Image GameOverScreen = null;
         [SerializeField]
@@ -40,6 +40,7 @@ namespace cs
         public static void StartGameOver()
         {
             function();
+            gameIsOver = true;
         }
 
         void OnCollisionEnter2D(Collision2D collision)
