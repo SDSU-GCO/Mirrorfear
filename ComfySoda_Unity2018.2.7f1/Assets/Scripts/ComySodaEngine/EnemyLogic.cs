@@ -30,7 +30,7 @@ namespace cs
         [SerializeField]
         Waypoint nextTargetedWaypoint = null;
         Rigidbody2D myRigidbody2D;
-        Animator tempAnimator;
+        Animator animator;
 
         public static List<EnemyLogic> enemyList = new List<EnemyLogic>();
 
@@ -40,7 +40,7 @@ namespace cs
             spriteRenderer = GetComponent<SpriteRenderer>();
             enemyDefaultMotivation = enemysCurrentMotivation;
             myRigidbody2D = GetComponent<Rigidbody2D>();
-            tempAnimator = GetComponent<Animator>();
+            animator = GetComponent<Animator>();
         }
 
         private void OnDisable()
@@ -185,16 +185,16 @@ namespace cs
 
                         Vector2 directionOfNearestTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.25f);
                         myRigidbody2D.velocity = directionOfNearestTargetWaypoint.normalized * enemySpeed;
-                        tempAnimator.SetFloat("Horizontal Axis", directionOfNearestTargetWaypoint.normalized.x);
-                        tempAnimator.SetFloat("Vertical Axis", directionOfNearestTargetWaypoint.normalized.y);
+                        animator.SetFloat("Horizontal Axis", directionOfNearestTargetWaypoint.normalized.x);
+                        animator.SetFloat("Vertical Axis", directionOfNearestTargetWaypoint.normalized.y);
                         break;
                     case EnemyState.BEE_LINE_FOR_PREY:
                         Vector2 directionOfPrey = new Vector2(prey.transform.position.x, prey.transform.position.y -0.25f) - new Vector2(transform.position.x, transform.position.y-0.25f);
                         if (!enemyHasLineOfSightOnPrey && myRigidbody2D.velocity.magnitude <= 0.2)
                             enemysCurrentMotivation = Mathf.Max(enemysCurrentMotivation - ((enemyDemotivationRate) * Time.deltaTime), float.MinValue);
                         myRigidbody2D.velocity = directionOfPrey.normalized * enemySpeed;
-                        tempAnimator.SetFloat("Horizontal Axis", directionOfPrey.normalized.x);
-                        tempAnimator.SetFloat("Vertical Axis", directionOfPrey.normalized.y);
+                        animator.SetFloat("Horizontal Axis", directionOfPrey.normalized.x);
+                        animator.SetFloat("Vertical Axis", directionOfPrey.normalized.y);
                         break;
                     case EnemyState.PHASE_TO_WAYPOINT:
                         if(nextTargetedWaypoint==null)
@@ -204,8 +204,8 @@ namespace cs
                         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, initialOpacity);
                         Vector2 directionOfLastTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.25f);
                         myRigidbody2D.velocity = directionOfLastTargetWaypoint.normalized * enemySpeed;
-                        tempAnimator.SetFloat("Horizontal Axis", directionOfLastTargetWaypoint.normalized.x);
-                        tempAnimator.SetFloat("Vertical Axis", directionOfLastTargetWaypoint.normalized.y);
+                        animator.SetFloat("Horizontal Axis", directionOfLastTargetWaypoint.normalized.x);
+                        animator.SetFloat("Vertical Axis", directionOfLastTargetWaypoint.normalized.y);
                         if (Vector2.Distance(new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y), new Vector2(transform.position.x, transform.position.y - 0.25f)) < 0.25)
                         {
                             currentEnemyState = EnemyState.FADE_IN;
@@ -220,8 +220,8 @@ namespace cs
 
                         Vector2 directionOfPathTargetWaypoint = new Vector2(nextTargetedWaypoint.transform.position.x, nextTargetedWaypoint.transform.position.y) - new Vector2(transform.position.x, transform.position.y-0.25f);
                         myRigidbody2D.velocity = directionOfPathTargetWaypoint.normalized * enemySpeed;
-                        tempAnimator.SetFloat("Horizontal Axis", directionOfPathTargetWaypoint.normalized.x);
-                        tempAnimator.SetFloat("Vertical Axis", directionOfPathTargetWaypoint.normalized.y);
+                        animator.SetFloat("Horizontal Axis", directionOfPathTargetWaypoint.normalized.x);
+                        animator.SetFloat("Vertical Axis", directionOfPathTargetWaypoint.normalized.y);
 
                         Debug.Assert(pathOfWaypoints!=null, "Error, No waypoint path found!");
 

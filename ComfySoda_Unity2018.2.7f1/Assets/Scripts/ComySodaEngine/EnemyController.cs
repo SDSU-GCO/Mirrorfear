@@ -30,10 +30,8 @@ namespace cs
 
 
         #region Enemy distance
-        [SerializeField]
-        public float CLOSE = 7;
-        [SerializeField]
-        public float MID = 12;
+        public float CLOSE = 3;
+        public float MID = 8;
 
         public enum EnemyRange { CLOSE, MID, FAR};
         public EnemyRange enemyRange = EnemyRange.FAR;
@@ -41,51 +39,45 @@ namespace cs
 
         void calculateAndAssignEnemyRange()
         {
-            foreach(EnemyLogic enemyLogic in enemyList)
+            enemyRange = EnemyRange.FAR;
+            foreach (EnemyLogic enemyLogic in enemyList)
             {
-                enemyRange = EnemyRange.FAR;
                 float tempDistance = Vector2.Distance(PlayerLogic.playerLogic.transform.position, enemyLogic.transform.position);
+                if(tempDistance <= CLOSE)
                 {
-                    if(tempDistance <= CLOSE || enemyRange==EnemyRange.CLOSE)
-                    {
-                        enemyRange = EnemyRange.CLOSE;
-                    }
-                    else if(tempDistance <= MID || enemyRange == EnemyRange.MID)
-                    {
-                        enemyRange = EnemyRange.MID;
-                    }
+                    enemyRange = EnemyRange.CLOSE;
+                }
+                else if(tempDistance <= MID && enemyRange == EnemyRange.FAR)
+                {
+                    enemyRange = EnemyRange.MID;
                 }
             }
         }
         #endregion
+
         private void Update()
         {
             calculateAndAssignEnemyRange();
-            switch(enemyRange)
+
+            if(GameOverController.gameIsOver == true)
             {
-                case EnemyRange.CLOSE:
-                    if(GameOverController.gameIsOver!=true)
-                    {
+                MusicManager.musicState = MusicState.main;
+            }
+            else
+            {
+                switch (enemyRange)
+                {
+                    case EnemyRange.CLOSE:
                         MusicManager.musicState = MusicState.boss;
-                    }
-                    else
-                    {
+                        break;
+                    case EnemyRange.MID:
+                        if (GameOverController.gameIsOver != true)
+                            MusicManager.musicState = MusicState.mob;
+                        break;
+                    case EnemyRange.FAR:
                         MusicManager.musicState = MusicState.main;
-                    }
-                    break;
-                case EnemyRange.MID:
-                    if (GameOverController.gameIsOver != true)
-                    {
-                        MusicManager.musicState = MusicState.mob;
-                    }
-                    else
-                    {
-                        MusicManager.musicState = MusicState.main;
-                    }
-                    break;
-                case EnemyRange.FAR:
-                    MusicManager.musicState = MusicState.main;
-                    break;
+                        break;
+                }
             }
         }
     }
