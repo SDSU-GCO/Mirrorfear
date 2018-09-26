@@ -5,6 +5,7 @@
 */[Bb]uildFiles/
 */[Bb]uilds/
 */Assets/AssetStoreTools
+**/BuildFiles.zip
 
 # Visual Studio cache directory
 .vs/
