@@ -10,39 +10,42 @@ using UnityEngine;
 
 namespace cs
 {
-    public class EnemyController : MonoBehaviour
+    public class EnemySupervisor : MonoBehaviour
     {
 
         #region Static referencing
-        public static EnemyController enemyController = null;
+        public static EnemySupervisor enemySupervisor = null;
         private void Awake()
         {
-            Debug.Assert(enemyController == null, "Error: There should only be one enemy controller assigned to \"EnemyController.enemyController\" at a time");
-            enemyController = this;
+            Debug.Assert(enemySupervisor == null, "Error: There should only be one enemy controller assigned to \"EnemyController.enemyController\" at a time");
+            enemySupervisor = this;
         }
 
         private void OnDestroy()
         {
-            Debug.Assert(enemyController == this, "Error: The enemy controller assigned to \"EnemyController.enemyController\" does not equal: " + gameObject);
-            enemyController = null;
+            Debug.Assert(enemySupervisor == this, "Error: The enemy controller assigned to \"EnemyController.enemyController\" does not equal: " + gameObject);
+            enemySupervisor = null;
         }
         #endregion
 
 
         #region Enemy distance
+        public enum EnemyRange { CLOSE, MID, FAR };
+
+
         public float CLOSE = 3;
         public float MID = 8;
-
-        public enum EnemyRange { CLOSE, MID, FAR};
         public EnemyRange enemyRange = EnemyRange.FAR;
-        public List<EnemyLogic> enemyList = EnemyLogic.enemyList;
+
+        [NonSerialized]
+        public List<EnemyObjectController> enemyList = EnemyObjectController.enemyList;
 
         void calculateAndAssignEnemyRange()
         {
             enemyRange = EnemyRange.FAR;
-            foreach (EnemyLogic enemyLogic in enemyList)
+            foreach (EnemyObjectController enemyLogic in enemyList)
             {
-                float tempDistance = Vector2.Distance(PlayerLogic.playerLogic.transform.position, enemyLogic.transform.position);
+                float tempDistance = Vector2.Distance(PlayerObjectController.playerObjectController.transform.position, enemyLogic.transform.position);
                 if(tempDistance <= CLOSE)
                 {
                     enemyRange = EnemyRange.CLOSE;
@@ -59,7 +62,7 @@ namespace cs
         {
             calculateAndAssignEnemyRange();
 
-            if(GameOverController.gameIsOver == true)
+            if(GameOverSupervisor.gameIsOver == true)
             {
                 MusicManager.musicState = MusicState.main;
             }
@@ -71,7 +74,7 @@ namespace cs
                         MusicManager.musicState = MusicState.boss;
                         break;
                     case EnemyRange.MID:
-                        if (GameOverController.gameIsOver != true)
+                        if (GameOverSupervisor.gameIsOver != true)
                             MusicManager.musicState = MusicState.mob;
                         break;
                     case EnemyRange.FAR:

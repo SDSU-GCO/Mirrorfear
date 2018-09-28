@@ -30,11 +30,11 @@ namespace cs
         {
             if (SceneManager.GetActiveScene().name == targetScene)
             {
-                PlayerLogic.playerLogic.transform.position = new Vector3(targetPosition.x, targetPosition.y, transform.position.z);
+                PlayerObjectController.playerObjectController.transform.position = new Vector3(targetPosition.x, targetPosition.y, transform.position.z);
             }
             else
             {
-                PlayerLogic.playerLogic.targetPosition = targetPosition;
+                PlayerObjectController.playerObjectController.targetPosition = targetPosition;
             }
         }
     }
