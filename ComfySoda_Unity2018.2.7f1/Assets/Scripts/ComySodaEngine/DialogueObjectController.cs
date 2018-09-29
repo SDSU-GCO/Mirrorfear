@@ -10,41 +10,6 @@ namespace cs
 {
     public class DialogueObjectController : MonoBehaviour
     {
-        [Serializable]
-        public struct StoryCharacterLoader
-        {
-            public string ID;
-            public string name;
-            public Sprite sprite;
-        }
-        
-
-        public struct StoryCharacter
-        {
-            public string name;
-            public Sprite sprite;
-        }
-
-        [SerializeField]
-        List<StoryCharacterLoader> StoryCharachtersList = new List<StoryCharacterLoader>();
-        
-        public Dictionary<string, StoryCharacter> storyCharacters = new Dictionary<string, StoryCharacter>();
-        
-        /// <summary>
-        /// Use this to do psuedo serialization because unity can't properly support direct fucking dictionary serialization, and I can't fix unities classes because I can't edit the base classes and don't want to build my own engine to get around this fucking mess.
-        /// </summary>
-        private void listToDictionary()
-        {
-            foreach(StoryCharacterLoader storyCharacterLoader in StoryCharachtersList)
-            {
-                StoryCharacter storyCharacter = new StoryCharacter();
-                storyCharacter.name = storyCharacterLoader.name;
-                storyCharacter.sprite = storyCharacterLoader.sprite;
-                storyCharacters.Add(storyCharacterLoader.ID, storyCharacter);
-            }
-        }
-
-
         public static bool DialogueBoxOpen = false;
         public int? characterPerSecondOverride = null;
         [SerializeField]
@@ -68,7 +33,6 @@ namespace cs
 
         private void Awake()
         {
-            listToDictionary();
             characterPerSecondDefaultForScene = characterPerSecond;
             DialogueBoxOpen = false;
             if (dialogueObjectController != null)
@@ -180,12 +144,12 @@ namespace cs
                 StopCoroutine(scrollingTextCoroutune);
             }
 
-            bool testKeypair = storyCharacters.ContainsKey(Conversation[sentenceCounter].speaker);
+            bool testKeypair = StoryCharachterGameSupervisor.storyCharacters.ContainsKey(Conversation[sentenceCounter].speaker);
             Debug.Assert(testKeypair == true, "Error: Invalid speaker for conversation: " + Conversation[sentenceCounter].speaker);
             if (testKeypair)
             {
-                nameText.text = storyCharacters[Conversation[sentenceCounter].speaker].name;
-                currentPortrait.overrideSprite = storyCharacters[Conversation[sentenceCounter].speaker].sprite;
+                nameText.text = StoryCharachterGameSupervisor.storyCharacters[Conversation[sentenceCounter].speaker].name;
+                currentPortrait.overrideSprite = StoryCharachterGameSupervisor.storyCharacters[Conversation[sentenceCounter].speaker].sprite;
             }
 
             scrollingTextCoroutune = StartCoroutine(TypeSentence(Conversation[sentenceCounter]));

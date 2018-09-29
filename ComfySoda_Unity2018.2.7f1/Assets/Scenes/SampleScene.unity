@@ -15749,6 +15749,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: a5a03745e6091c5488e55a4cf56ecdfa,
         type: 3}
+    - target: {fileID: 95587256288885502, guid: 3c23fdf232387984f9e62d1c7475196a,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114648419241149012, guid: 3c23fdf232387984f9e62d1c7475196a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 3c23fdf232387984f9e62d1c7475196a, type: 2}
@@ -15853,6 +15858,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutScene: Introduction
+--- !u!114 &2009544174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009544172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80b920b0c73d80469479f30f8a97267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoryCharachtersList:
+  - ID: Child
+    name: Timmy
+    sprite: {fileID: 21300000, guid: b43692e9d1988e54cac53d5b6b6b5691, type: 3}
+  - ID: Mirror Child
+    name: The Dark One
+    sprite: {fileID: 21300000, guid: 5062ff925c813da4782946b4e00a4b90, type: 3}
+  - ID: Blank
+    name: 
+    sprite: {fileID: 0}
+  - ID: Unknown
+    name: ???
+    sprite: {fileID: 21300000, guid: 6a9c02a8d645a2f4b86f5311c7046703, type: 3}
 --- !u!114 &2009544175
 MonoBehaviour:
   m_ObjectHideFlags: 0

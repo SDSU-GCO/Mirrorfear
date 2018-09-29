@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ComySodaEngine\EnemySupervisor.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\GameOverSupervisor.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\InputParameterInterface.cs" />
+    <Compile Include="Assets\Scripts\ComySodaEngine\StoryCharachterGameSupervisor.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\WaypointObjectController.cs" />
     <Compile Include="Assets\Scripts\ComySodaEngine\WaypointSupervisor.cs" />
     <Compile Include="Assets\Scripts\GameSupervisor.cs" />

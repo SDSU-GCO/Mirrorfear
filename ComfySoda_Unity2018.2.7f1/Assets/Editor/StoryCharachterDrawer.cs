@@ -6,7 +6,7 @@ using System.Text;
 
 namespace cs
 {
-    [CustomPropertyDrawer(typeof(DialogueObjectController.StoryCharacterLoader))]
+    [CustomPropertyDrawer(typeof(StoryCharachterGameSupervisor.StoryCharacterLoader))]
     public class StoryCharachterDrawer : PropertyDrawer
     {
         // Draw the property inside the given rect
@@ -29,7 +29,7 @@ namespace cs
             //    i++;
             //}
 
-            label.text = "IDTag, Name, Sprite:";
+            label.text = "IDTag, Display Name, Sprite:";
 
             // Draw label
             position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);

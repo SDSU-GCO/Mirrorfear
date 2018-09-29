@@ -9,8 +9,6 @@ namespace cs
 {
     public static class DialogueSupervisor
     {
-
-
         public static List<Parser.SentenceStructure> getSceneData(string cutscene)
         {
             StreamReader inputStream = new StreamReader("DialogueFiles/" + cutscene + ".txt");
