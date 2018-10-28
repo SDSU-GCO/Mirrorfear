@@ -108,16 +108,16 @@ namespace cs
                 }
                 if(dialogueParameters.dialogInstructionSet!=null)
                 {
-                    DialogueManager.StartDialogue(cutscene, dialogueParameters.dialogInstructionSet);
+                    DialogueSceneSupervisor.StartDialogue(cutscene, dialogueParameters.dialogInstructionSet);
                 }
                 else
                 {
-                    DialogueManager.StartDialogue(cutscene);
+                    DialogueSceneSupervisor.StartDialogue(cutscene);
                 }
             }
             else
             {
-                DialogueManager.StartDialogue(cutscene);
+                DialogueSceneSupervisor.StartDialogue(cutscene);
             }
         }
         

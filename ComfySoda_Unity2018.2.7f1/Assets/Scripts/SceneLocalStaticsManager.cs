@@ -11,7 +11,7 @@ namespace cs
         // Update is called once per frame
         void Update()
         {
-            if(DialogueManager.DialogueManagerOpen)
+            if(DialogueSceneSupervisor.DialogueManagerOpen)
             {
                 EnemyLogic.disableEnimies = true;
                 PlayerLogic.playerLogic.enableMovement = false;
