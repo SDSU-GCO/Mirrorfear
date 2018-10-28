@@ -8,16 +8,11 @@ using TMPro;
 
 namespace cs
 {
-    public class DialogueManager : MonoBehaviour
+    public class DialogueSceneSupervisor : MonoBehaviour
     {
-        [Serializable]
-        public struct Portraits
-        {
-            public Sprite timmy;
-            public Sprite mirrorChild;
-            public Sprite Blank;
-        }
-        
+        Dictionary<string, CharacterSpriteScriptableObject> characterSpriteData = new Dictionary<string, CharacterSpriteScriptableObject>();
+        public CharacterSpriteScriptableObject[] characterSpriteScriptableObjects;
+
         public static bool DialogueManagerOpen = false;
         public int? characterPerSecondOverride = null;
         [SerializeField]
@@ -30,15 +25,8 @@ namespace cs
         TextMeshProUGUI dialogueText = null;
         [SerializeField]
         Image currentPortrait = null;
-        [SerializeField]
-        Portraits portraits = new Portraits
-        {
-            timmy=null,
-            mirrorChild=null,
-            Blank=null,
-        };
 
-        static DialogueManager dialogueManager = null;
+        static DialogueSceneSupervisor dialogueManager = null;
         Dictionary<string, DialogInstructionSet.ActionFunction> actionFunctions = new Dictionary<string, DialogInstructionSet.ActionFunction>();
         Coroutine scrollingTextCoroutune = null;
         List<Parser.SentenceStructure> Conversation;
@@ -46,8 +34,21 @@ namespace cs
         int characterPerSecondDefaultForScene;
 
 
+
+        private void Reset()
+        {
+            //doesn't work
+            characterSpriteScriptableObjects = ComfySodaFunctions.GetAllInstances<CharacterSpriteScriptableObject>();
+            animator = GetComponent<Animator>();
+        }
+
         private void Awake()
         {
+            foreach(CharacterSpriteScriptableObject characterSpriteScriptableObject in characterSpriteScriptableObjects)
+            {
+                characterSpriteData.Add(characterSpriteScriptableObject.characterId, characterSpriteScriptableObject);
+            }
+
             characterPerSecondDefaultForScene = characterPerSecond;
             DialogueManagerOpen = false;
             if (dialogueManager != null)
@@ -55,10 +56,6 @@ namespace cs
                 Debug.LogWarning("There should only be one \"DialogManager\" in a scene!");
             }
             dialogueManager = this;
-            if(animator==null)
-            {
-                animator = GetComponent<Animator>();
-            }
         }
 
         private void OnDestroy()
@@ -158,35 +155,20 @@ namespace cs
             {
                 StopCoroutine(scrollingTextCoroutune);
             }
-           
 
-            switch (Conversation[sentenceCounter].speaker)
+            CharacterSpriteScriptableObject tempCharacter = null;
+            if(characterSpriteData.TryGetValue(Conversation[sentenceCounter].speaker, out tempCharacter))
             {
-                case "Child":
-                    nameText.text = "Timmy";
-                    currentPortrait.overrideSprite = portraits.timmy;
-                    break;
-                case "ENEMY_NAME":
-                    nameText.text = "Mirror Timmy";
-                    currentPortrait.overrideSprite = portraits.mirrorChild;
-                    break;
-                case "BLANK":
-                    nameText.text = " ";
-                    currentPortrait.overrideSprite = portraits.Blank;
-                    break;
-                case "ERROR":
-                    break;
-                default:
-                    Debug.Log("invalid speaker for conversation: "+ Conversation[sentenceCounter].speaker);
-                    break;
+                nameText.text = tempCharacter.characterName;
+                currentPortrait.overrideSprite = tempCharacter.characterPortrait;
             }
 
-            scrollingTextCoroutune = StartCoroutine(TypeSentence(Conversation[sentenceCounter]));
+            scrollingTextCoroutune = StartCoroutine(SaySentence(Conversation[sentenceCounter]));
             sentenceCounter++;
 
         }
 
-        IEnumerator TypeSentence(Parser.SentenceStructure sentence)
+        IEnumerator SaySentence(Parser.SentenceStructure sentence)
         {
             int charachtersToPrint = 0;
             float intervalInSeconds = 0;

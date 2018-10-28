@@ -13,7 +13,7 @@ namespace cs
         {
             if (PersistentData.firstLoadSceneOne)
             {
-                DialogueManager.StartDialogue(cutScene);
+                DialogueSceneSupervisor.StartDialogue(cutScene);
                 PersistentData.firstLoadSceneOne = false;
             }
         }

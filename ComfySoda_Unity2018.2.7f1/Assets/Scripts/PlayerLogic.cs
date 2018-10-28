@@ -34,6 +34,8 @@ namespace cs
         // Use this for initialization
         private void Awake()
         {
+            playersRigidBody2D = GetComponent<Rigidbody2D>();
+            playerPersistantDataComponent = GetComponent<PlayerPersistantDataComponent>();
             Debug.Assert(playerLogic == null, "Error: There is more than one player in the scene, is this intentional?");
             playerLogic = this;
             enableMovement = true;
@@ -41,15 +43,11 @@ namespace cs
 
         private void Start()
         {
-            playersRigidBody2D = GetComponent<Rigidbody2D>();
-            playerPersistantDataComponent = GetComponent<PlayerPersistantDataComponent>();
-
             if (targetPosition != null)
             {
                 transform.position = new Vector3((float)targetPosition.Value.x, (float)targetPosition.Value.y, transform.position.z);
             }
             targetPosition = null;
-
         }
 
         private void OnDestroy()
@@ -69,7 +67,10 @@ namespace cs
 
         public bool enableMovement
         {
-            get { return canMove; }
+            get
+            {
+                return canMove;
+            }
             set
             {
                 if (!value)
